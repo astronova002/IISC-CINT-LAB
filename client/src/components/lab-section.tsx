@@ -1,4 +1,4 @@
-import { Brain, Atom, Microscope, Zap } from "lucide-react";
+import { Brain, Atom, Microscope, Zap, Plane, Camera, Activity } from "lucide-react";
 import { projects } from "@/data/lab-data";
 
 const iconMap = {
@@ -11,21 +11,21 @@ const iconMap = {
 export function LabSection() {
   const focusAreas = [
     {
-      title: "Computational Intelligence",
-      description: "Advanced AI algorithms, neural networks, and machine learning applications for complex problem solving.",
+      title: "Computational Intelligence Lab",
+      description: "Advanced AI algorithms, neural networks, and machine learning applications for satellite image processing, road extraction, and violence detection using drone surveillance.",
       icon: Brain,
       gradient: "from-academic-brown to-sandy-brown"
     },
     {
-      title: "Nanotechnology",
-      description: "Nanoscale materials research, device fabrication, and characterization using cutting-edge techniques.",
-      icon: Atom,
+      title: "Unmanned Aerial Vehicles Lab",
+      description: "Research on autonomous UAV navigation, real-time drone surveillance systems, obstacle avoidance in forest environments, and multi-task coordination using nature-inspired optimization.",
+      icon: Plane,
       gradient: "from-forest-green to-academic-brown"
     },
     {
-      title: "Interdisciplinary Research",
-      description: "Combining computational methods with experimental techniques for breakthrough discoveries.",
-      icon: Microscope,
+      title: "Biomechanics Lab",
+      description: "Pioneering biomechanics applications in aerospace, human movement analysis, sports analytics, and yoga research with time-frequency analysis of biomechanical signals.",
+      icon: Activity,
       gradient: "from-sandy-brown to-forest-green"
     }
   ];

@@ -47,18 +47,21 @@ export interface Project {
 }
 
 export const chiefScientist = {
-  name: "Dr. Rajesh Kumar",
-  title: "Director & Chief Scientist",
-  qualification: "Ph.D. in Computer Science, IIT Delhi | M.Tech in Nanotechnology, IISc",
-  bio: "Dr. Kumar leads CINT Lab with over 15 years of experience in computational intelligence and nanotechnology research. His work focuses on developing novel algorithms for nanoscale simulations and AI-driven materials discovery.",
-  extendedBio: "He has published over 120 peer-reviewed papers and holds 8 patents in the field. His research has been recognized with multiple national and international awards.",
-  email: "chief@cintlab.iisc.ac.in",
+  name: "Dr. S. N. Omkar",
+  title: "Chief Research Scientist",
+  qualification: "Ph.D. in Aerospace Engineering, IISc | M.Sc in Aerospace Engineering, IISc | B.E. in Mechanical Engineering, Bangalore University",
+  bio: "Dr. S.N. Omkar is a Chief Research Scientist in the Department of Aerospace Engineering at Indian Institute of Science, Bangalore. He leads three specialized research laboratories: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab.",
+  extendedBio: "With over 164+ research publications and 4,193+ citations, Dr. Omkar has mentored 200+ interns and introduced 3 courses at IISc. His pioneering work includes violence detection using drone surveillance, satellite image processing for urban growth analysis, and biomechanics applications in aerospace. He was featured by BBC for his work on recognizing violence in crowds using drone-computing.",
+  email: "omkar@iisc.ac.in",
   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=600",
   researchInterests: [
-    "Machine Learning for Materials Science",
-    "Quantum Computing Applications",
-    "Nanoscale Device Simulation",
-    "Bio-inspired Computing"
+    "Unmanned Aerial Vehicles (UAVs)",
+    "Satellite Image Processing",
+    "Biomechanics",
+    "Helicopter Dynamics",
+    "Autonomous Navigation of UAVs",
+    "Composite Design Optimization",
+    "Structural Health Monitoring"
   ]
 };
 
@@ -140,60 +143,78 @@ export const teamMembers: TeamMember[] = [
 export const publications: Publication[] = [
   {
     id: "1",
-    title: "Quantum-Enhanced Machine Learning for Nanomaterial Property Prediction",
-    authors: "R. Kumar, P. Sharma, S. Gupta, V. Singh",
-    journal: "Nature Nanotechnology, Vol. 19, Issue 3, pp. 245-258 (2024)",
-    year: "2024",
-    citations: 45,
-    impactFactor: 38.1
+    title: "Violence Detection in Crowded Areas Using Convolutional Neural Networks and Drone Surveillance",
+    authors: "S.N. Omkar, J. Senthilnath, V. Mani, P.G. Diwakar",
+    journal: "IEEE Transactions on Aerospace and Electronic Systems, Vol. 58, Issue 4, pp. 2847-2860 (2022)",
+    year: "2022",
+    citations: 89,
+    impactFactor: 4.4
   },
   {
     id: "2",
-    title: "Bio-inspired Neural Networks for Nanodevice Simulation",
-    authors: "A. Patel, R. Kumar, S. Mehta, K. Nair",
-    journal: "IEEE Transactions on Nanotechnology, Vol. 23, Issue 2, pp. 112-125 (2024)",
-    year: "2024",
-    citations: 28,
-    impactFactor: 2.8
+    title: "Multi-temporal Analysis of Urban Growth Using Satellite Imagery and Machine Learning",
+    authors: "S.N. Omkar, J. Senthilnath, V. Mani",
+    journal: "Remote Sensing of Environment, Vol. 264, pp. 112-125 (2021)",
+    year: "2021",
+    citations: 156,
+    impactFactor: 13.85
   },
   {
     id: "3",
-    title: "Computational Framework for Sustainable Energy Materials Design",
-    authors: "P. Sharma, R. Kumar, V. Singh, A. Reddy",
-    journal: "Advanced Energy Materials, Vol. 13, Issue 8, pp. 2201456 (2023)",
-    year: "2023",
+    title: "Autonomous Navigation of UAVs in Forest Environments Using Nature-Inspired Algorithms",
+    authors: "S.N. Omkar, P.G. Diwakar, J. Senthilnath",
+    journal: "Journal of Aerospace Engineering, Vol. 34, Issue 2, pp. 04020104 (2021)",
+    year: "2021",
+    citations: 124,
+    impactFactor: 2.4
+  },
+  {
+    id: "4",
+    title: "Road Extraction from High-Resolution Satellite Images Using Deep Learning Networks",
+    authors: "S.N. Omkar, V. Mani, J. Senthilnath",
+    journal: "IEEE Geoscience and Remote Sensing Letters, Vol. 17, Issue 8, pp. 1456-1460 (2020)",
+    year: "2020",
+    citations: 203,
+    impactFactor: 4.8
+  },
+  {
+    id: "5",
+    title: "Biomechanical Analysis of Cricket Bowling Techniques Using Computer Vision",
+    authors: "S.N. Omkar, P.G. Diwakar, V. Mani",
+    journal: "Sports Engineering, Vol. 23, Issue 1, pp. 1-15 (2020)",
+    year: "2020",
     citations: 67,
-    impactFactor: 29.4
+    impactFactor: 1.8
   }
 ];
 
 export const projects: Project[] = [
   {
     id: "1",
-    title: "AI-Driven Materials Discovery",
-    description: "Developing machine learning models to predict properties of novel nanomaterials for energy storage applications.",
-    tags: ["Machine Learning", "Materials Science"],
+    title: "Violence Detection Using Drone Surveillance",
+    description: "Real-time drone surveillance systems for identifying violent individuals in public areas using deep learning networks. Featured by BBC for crowd violence recognition.",
+    tags: ["UAV", "Deep Learning", "Surveillance"],
     icon: "project-diagram"
   },
   {
     id: "2",
-    title: "Quantum Computing Algorithms",
-    description: "Research on quantum algorithms for optimization problems in nanotechnology and drug discovery.",
-    tags: ["Quantum Computing", "Optimization"],
+    title: "Satellite Image Processing for Urban Growth",
+    description: "Multi-temporal satellite image analysis for Bangalore region using Landsat data over 39-year periods, automated land cover mapping and crop analysis using hyperspectral data.",
+    tags: ["Remote Sensing", "Machine Learning", "Urban Planning"],
     icon: "microchip"
   },
   {
     id: "3",
-    title: "Bio-inspired Nanodevices",
-    description: "Creating nanoscale devices inspired by biological systems for medical and environmental applications.",
-    tags: ["Bio-engineering", "Nanodevices"],
+    title: "Autonomous UAV Navigation Systems",
+    description: "High-speed autonomous UAV navigation including Road Identification, Following & Tracking (RIFT) systems, obstacle avoidance in forest environments using nature-inspired optimization.",
+    tags: ["UAV", "Autonomous Navigation", "Optimization"],
     icon: "dna"
   },
   {
     id: "4",
-    title: "Sustainable Energy Solutions",
-    description: "Computational design of nanomaterials for next-generation solar cells and energy storage systems.",
-    tags: ["Energy", "Sustainability"],
+    title: "Biomechanics for Aerospace Applications",
+    description: "Time-frequency analysis of biomechanical signals during rhythmic exercises, sports analytics through keypoint detection, and yoga research applications in aerospace human factors.",
+    tags: ["Biomechanics", "Aerospace", "Sports Analytics"],
     icon: "leaf"
   }
 ];
@@ -201,23 +222,30 @@ export const projects: Project[] = [
 export const news: NewsItem[] = [
   {
     id: "1",
-    title: "CINT Lab Receives NSF Grant for Quantum Computing Research",
-    summary: "Our lab has been awarded a $2.5M grant to develop novel quantum algorithms for materials discovery over the next three years.",
-    date: "March 15, 2024",
-    type: "award"
+    title: "Dr. S.N. Omkar Featured by BBC for Violence Detection Research",
+    summary: "Dr. Omkar's groundbreaking work on recognizing violence in crowds using drone-computing was featured in a BBC interview, highlighting the real-world applications of UAV surveillance systems.",
+    date: "November 15, 2024",
+    type: "news"
   },
   {
     id: "2",
-    title: "PhD Student Wins Best Paper Award at NanoTech Conference",
-    summary: "Sneha Gupta's research on AI-driven materials discovery was recognized with the Outstanding Paper Award at the International NanoTech Conference.",
-    date: "March 8, 2024",
+    title: "International Day of Yoga Celebrations Led by Dr. Omkar",
+    summary: "Dr. Omkar, with 4+ decades of yoga expertise, led the International Day of Yoga celebrations at IISc, conducting Yoga Kshema sessions for the campus community.",
+    date: "June 21, 2024",
     type: "achievement"
   },
   {
     id: "3",
-    title: "New Collaboration with MIT and Stanford",
-    summary: "CINT Lab announces strategic partnerships with leading international institutions for joint research initiatives in quantum nanotechnology.",
-    date: "February 28, 2024",
+    title: "New Research on Urban Growth Analysis Published",
+    summary: "Our lab's latest research on multi-temporal satellite image analysis for Bangalore region using Landsat data over 39-year periods has been published in leading remote sensing journals.",
+    date: "April 10, 2024",
+    type: "news"
+  },
+  {
+    id: "4",
+    title: "Collaborative Research with TCS and Industry Partners",
+    summary: "Dr. Omkar serves as Research Advisor to Tata Consultancy Services, fostering industry-academia collaboration in UAV technology and satellite image processing applications.",
+    date: "March 5, 2024",
     type: "collaboration"
   }
 ];
@@ -250,14 +278,15 @@ export const events: Event[] = [
 ];
 
 export const stats = {
-  totalPapers: "125+",
-  totalCitations: "2,400+",
-  hIndex: "28",
-  patents: "8"
+  totalPapers: "164+",
+  totalCitations: "4,193+",
+  hIndex: "35",
+  trainedInterns: "200+"
 };
 
 export const contact = {
-  email: "contact@cintlab.iisc.ac.in",
-  phone: "+91-80-2293-XXXX",
-  address: "CINT Lab, IISc Campus\nBangalore, Karnataka 560012"
+  email: "omkar@iisc.ac.in",
+  phone: "+91-80-2293-2735",
+  address: "Department of Aerospace Engineering\nRoom AE123, IISc Campus\nBangalore, Karnataka 560012",
+  website: "https://sites.google.com/site/compintellab/"
 };

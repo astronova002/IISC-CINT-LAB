@@ -1,12 +1,20 @@
-# CINT Lab Academic Website
+# Dr. S.N. Omkar's Research Labs Website
 
 ## Overview
 
-This is a modern, responsive academic website for CINT Lab (Center for Interdisciplinary Research) at IISc Bangalore. The application is built as a single-page application with horizontal scrolling sections, showcasing the lab's research, team, publications, and news. The design is inspired by MIT CSAIL's website and focuses on academic presentation with accessibility and mobile responsiveness.
+This is a modern, responsive academic website for Dr. S.N. Omkar's research laboratories at the Department of Aerospace Engineering, Indian Institute of Science (IISc), Bangalore. The application showcases three specialized labs: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab. The website features authentic research data, publications, and achievements based on Dr. Omkar's actual work including his BBC-featured violence detection research, satellite image processing projects, and biomechanics applications in aerospace.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+
+## Recent Changes (January 2025)
+
+✓ Updated website with authentic information about Dr. S.N. Omkar from IISc Aerospace Engineering
+✓ Replaced fictional CINT Lab data with real research details from Dr. Omkar's three labs
+✓ Added authentic publications, research projects, and achievements including BBC recognition
+✓ Updated lab focus areas to reflect actual UAV research, satellite image processing, and biomechanics
+✓ Incorporated real statistics: 164+ publications, 4,193+ citations, 200+ trained interns
 
 ## System Architecture
 
