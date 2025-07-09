@@ -10,11 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (January 2025)
 
-✓ Updated website with authentic information about Dr. S.N. Omkar from IISc Aerospace Engineering
-✓ Replaced fictional CINT Lab data with real research details from Dr. Omkar's three labs
-✓ Added authentic publications, research projects, and achievements including BBC recognition
-✓ Updated lab focus areas to reflect actual UAV research, satellite image processing, and biomechanics
-✓ Incorporated real statistics: 164+ publications, 4,193+ citations, 200+ trained interns
+✓ Completely transformed website from horizontal scrolling to compact navigation-based layout
+✓ Implemented real-time data integration with live research metrics and updates
+✓ Added official IISc branding and logos throughout the website
+✓ Created 7 distinct sections: Home, About, Research, Team, Publications, News, Contact
+✓ Integrated Dr. S.N. Omkar's actual photo from IISc website
+✓ Added authentic collaborator information from his research publications
+✓ Implemented live statistics updates every 30 seconds
+✓ Enhanced with official IISc Department of Aerospace Engineering branding
 
 ## System Architecture
 
@@ -36,11 +39,13 @@ Preferred communication style: Simple, everyday language.
 
 ### Key Design Decisions
 
-1. **Horizontal Scrolling Interface**: Implements a unique horizontal scrolling design for desktop with fallback to vertical scrolling on mobile devices
-2. **Academic Color Scheme**: Custom CSS variables for academic brown, forest green, and sandy brown colors
-3. **Accessibility First**: Proper ARIA labels, semantic HTML, and screen reader support
-4. **Responsive Design**: Mobile-first approach with breakpoints for tablet and desktop
-5. **Component-Based Architecture**: Modular React components for each section (Hero, About, Lab, Team, Publications, News)
+1. **Navigation-Based Layout**: Completely redesigned from horizontal scrolling to compact navigation-based interface
+2. **Real-Time Data Integration**: Live updates for research metrics, citations, and news
+3. **Official IISc Branding**: Integrated official IISc logos and Department of Aerospace Engineering branding
+4. **Compact Sections**: Each section is self-contained with minimal scrolling required
+5. **Authentic Data Only**: All information sourced from official IISc profiles and research publications
+6. **Responsive Design**: Mobile-first approach optimized for all device types
+7. **Component-Based Architecture**: Modular React components for each section with dedicated hooks for real-time data
 
 ## Key Components
 
