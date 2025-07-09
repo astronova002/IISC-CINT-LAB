@@ -50,15 +50,15 @@ export const chiefScientist = {
   name: "Dr. S. N. Omkar",
   title: "Chief Research Scientist",
   qualification: "Ph.D. in Aerospace Engineering, IISc | M.Sc in Aerospace Engineering, IISc | B.E. in Mechanical Engineering, Bangalore University",
-  bio: "Dr. S.N. Omkar is a Chief Research Scientist in the Department of Aerospace Engineering at Indian Institute of Science, Bangalore. He leads three specialized research laboratories: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab.",
-  extendedBio: "With over 164+ research publications and 4,193+ citations, Dr. Omkar has mentored 200+ interns and introduced 3 courses at IISc. His pioneering work includes violence detection using drone surveillance, satellite image processing for urban growth analysis, and biomechanics applications in aerospace. He was featured by BBC for his work on recognizing violence in crowds using drone-computing.",
+  bio: "Dr. S.N. Omkar is a Chief Research Scientist in the Guidance & Control area of the Department of Aerospace Engineering at Indian Institute of Science, Bangalore. He leads three specialized research laboratories: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab.",
+  extendedBio: "With over 164+ research publications and 4,193+ citations, Dr. Omkar has mentored 200+ interns and introduced 3 courses at IISc. He serves as Research Advisor to Tata Consultancy Services and holds memberships in the Indian Society for Remote Sensing, American Helicopter Society, and is a Founder Member of the Automatic Control and Dynamic Optimization Society (ACDOS). His pioneering work includes violence detection using drone surveillance, satellite image processing for urban growth analysis, and biomechanics applications in aerospace. He was featured by BBC for his work on recognizing violence in crowds using drone-computing.",
   email: "omkar@iisc.ac.in",
-  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=600",
+  image: "https://aero.iisc.ac.in/wp-content/uploads/elementor/thumbs/SN-Omkar-qtlqf0ienj915ldm6bcsijyq3rkucv7pmu385w70rk.jpg",
   researchInterests: [
-    "Unmanned Aerial Vehicles (UAVs)",
-    "Satellite Image Processing",
-    "Biomechanics",
     "Helicopter Dynamics",
+    "Satellite Image Processing", 
+    "Biomechanics",
+    "Uninhabited Air Vehicles (UAV)",
     "Autonomous Navigation of UAVs",
     "Composite Design Optimization",
     "Structural Health Monitoring"
@@ -68,75 +68,75 @@ export const chiefScientist = {
 export const teamMembers: TeamMember[] = [
   {
     id: "1",
-    name: "Dr. Priya Sharma",
-    title: "Associate Professor",
-    specialization: "Quantum Computing & AI",
+    name: "Dr. J. Senthilnath",
+    title: "Research Collaborator",
+    specialization: "Satellite Image Processing & Machine Learning",
     category: "faculty",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "priya@cintlab.iisc.ac.in"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "senthilnath@iisc.ac.in"
   },
   {
     id: "2",
-    name: "Dr. Arjun Patel",
-    title: "Assistant Professor",
-    specialization: "Nanomaterials & Devices",
+    name: "Dr. V. Mani",
+    title: "Research Collaborator",
+    specialization: "Computer Vision & Deep Learning",
     category: "faculty",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "arjun@cintlab.iisc.ac.in"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "vmani@iisc.ac.in"
   },
   {
     id: "3",
-    name: "Sneha Gupta",
-    title: "PhD Student (3rd Year)",
-    specialization: "Machine Learning for Materials",
-    category: "phd",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "sneha@cintlab.iisc.ac.in"
+    name: "Dr. P.G. Diwakar",
+    title: "Research Collaborator",
+    specialization: "UAV Systems & Biomechanics",
+    category: "faculty",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "pgdiwakar@iisc.ac.in"
   },
   {
     id: "4",
-    name: "Vikram Singh",
-    title: "PhD Student (2nd Year)",
-    specialization: "Quantum Algorithms",
+    name: "Current PhD Student",
+    title: "PhD Student",
+    specialization: "Drone Surveillance Systems",
     category: "phd",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "vikram@cintlab.iisc.ac.in"
+    email: "phd.student@iisc.ac.in"
   },
   {
     id: "5",
-    name: "Ananya Reddy",
-    title: "M.Tech Student (1st Year)",
-    specialization: "Computational Biology",
-    category: "masters",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "ananya@cintlab.iisc.ac.in"
+    name: "Current PhD Student",
+    title: "PhD Student",
+    specialization: "Satellite Image Analysis",
+    category: "phd",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "phd.student2@iisc.ac.in"
   },
   {
     id: "6",
-    name: "Rahul Kumar",
-    title: "M.Tech Student (2nd Year)",
-    specialization: "Nanoelectronics",
+    name: "Current M.Tech Student",
+    title: "M.Tech Student",
+    specialization: "Biomechanics Applications",
     category: "masters",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "rahul@cintlab.iisc.ac.in"
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "mtech.student@iisc.ac.in"
   },
   {
     id: "7",
-    name: "Dr. Sanjay Mehta",
-    title: "Senior Researcher, Google AI",
-    specialization: "PhD 2019 - Quantum ML",
+    name: "Alumni (Representative)",
+    title: "Former PhD Student",
+    specialization: "Now in Industry/Academia",
     category: "alumni",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "sanjay@google.com"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "alumni@companies.com"
   },
   {
     id: "8",
-    name: "Dr. Kavitha Nair",
-    title: "Principal Scientist, Intel Labs",
-    specialization: "PhD 2020 - Nanodevices",
+    name: "Alumni (Representative)",
+    title: "Former Research Scholar",
+    specialization: "Now in Research Organizations",
     category: "alumni",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "kavitha@intel.com"
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    email: "alumni2@organizations.com"
   }
 ];
 
@@ -288,5 +288,6 @@ export const contact = {
   email: "omkar@iisc.ac.in",
   phone: "+91-80-2293-2735",
   address: "Department of Aerospace Engineering\nRoom AE123, IISc Campus\nBangalore, Karnataka 560012",
-  website: "https://sites.google.com/site/compintellab/"
+  website: "https://sites.google.com/site/compintellab/",
+  irinsProfile: "https://iiscprofiles.irins.org/profile/3996"
 };
