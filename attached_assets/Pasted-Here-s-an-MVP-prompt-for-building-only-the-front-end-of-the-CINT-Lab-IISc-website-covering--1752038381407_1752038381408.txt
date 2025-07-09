@@ -1,0 +1,78 @@
+Here's an **MVP prompt for building only the front-end** of the **CINT Lab IISc website**, covering the structure and sections you've described. This prompt is ideal for using with tools like Cursor AI, Vercel AI, or even prompting GitHub Copilot for HTML/CSS/JS scaffolding.
+
+---
+
+### 🔧 MVP Prompt (Frontend Only): CINT Lab IISc Website
+
+> **Prompt:**
+> Build a responsive and accessible front-end for a research lab website named **CINT Lab – IISc Bangalore**. The purpose of the website is to showcase the lab’s research, alumni, staff, and particularly highlight the Chief Scientist.
+> Design with **mobile (Android/iOS)**, **tablet**, and **laptop** compatibility in mind. Follow modern accessibility standards (WCAG) and maintain consistent branding throughout. Use **HTML, Tailwind CSS**, and optionally **JavaScript** for interactivity.
+
+#### 🏗️ Website Structure:
+
+Create the following core pages/components:
+
+1. **Landing Page (Homepage):**
+
+   * Hero section with banner image of Chief Scientist
+   * Brief tagline + mission statement
+   * Quick navigation buttons to: Research, Lab, Publications, Contact
+
+2. **About Section (/about):**
+
+   * Overview of the organization and lab
+   * Mission, Vision, and History cards or timeline
+   * Simple animated transitions or scroll-based reveals
+
+3. **Chief Scientist Section (/chief-scientist):**
+
+   * Profile with photo, bio, research interests
+   * Contact info and social media links
+   * Clean, centered layout with academic feel
+
+4. **Lab Section (/lab):**
+
+   * Overview of the lab
+   * Research focus areas
+   * Ongoing projects in card/grid layout
+
+5. **Team Section (/team):**
+
+   * Filterable or categorized list of:
+
+     * Faculty/Staff
+     * PhD & Masters Students
+     * Collaborators/Alumni
+
+6. **Publications Section (/publications):**
+
+   * List of research papers, articles, books
+   * Include year, author names, downloadable link (optional icon placeholder)
+
+7. **News and Events (/news-events):**
+
+   * List of announcements, updates
+   * Upcoming event cards with date, title, and location
+
+#### 🌐 Global Components:
+
+* **Navbar:** Sticky, accessible navigation with dropdowns or drawer menu for mobile
+* **Footer:** Lab contact info, institute link, social icons
+* **Consistent color scheme and typography** based on IISc brand or earthy/academic tones
+
+#### 📱 Device Compatibility:
+
+* Fully responsive using Tailwind’s breakpoints
+* Optimized for WebP image formats
+* Testable on Android, iOS, and major browsers
+
+#### ♿ Accessibility & UX:
+
+* Use semantic HTML
+* Keyboard navigation support
+* Color contrast and font size accessibility
+* Aria labels for nav, sections, and interactive elements
+
+---
+
+Let me know if you want this as a **ready-to-copy HTML+Tailwind template**, or if you'd like to generate each page one by one.
