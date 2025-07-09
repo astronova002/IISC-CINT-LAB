@@ -2,9 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Award, Newspaper, Users, ExternalLink } from "lucide-react";
-import { news } from "@/data/lab-data";
+import { adminNewsItems, getPublishedNews, getNewsByType } from "@/data/admin-data";
 
 export function NewsSection() {
+  const recentNews = getPublishedNews(6); // Get 6 most recent published news items
+  
   const getTypeIcon = (type: string) => {
     switch (type) {
       case "award":
@@ -40,8 +42,6 @@ export function NewsSection() {
     });
   };
 
-  const recentNews = news.slice(0, 6); // Show most recent 6 items
-
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -56,7 +56,7 @@ export function NewsSection() {
           <CardContent className="p-4">
             <Award className="h-6 w-6 text-yellow-500 mx-auto mb-2" />
             <div className="text-xl font-bold">
-              {news.filter(item => item.type === 'award').length}
+              {getNewsByType('award').length}
             </div>
             <div className="text-sm text-gray-600">Awards</div>
           </CardContent>
@@ -65,7 +65,7 @@ export function NewsSection() {
           <CardContent className="p-4">
             <Users className="h-6 w-6 text-blue-500 mx-auto mb-2" />
             <div className="text-xl font-bold">
-              {news.filter(item => item.type === 'collaboration').length}
+              {getNewsByType('collaboration').length}
             </div>
             <div className="text-sm text-gray-600">Collaborations</div>
           </CardContent>
@@ -74,7 +74,7 @@ export function NewsSection() {
           <CardContent className="p-4">
             <Award className="h-6 w-6 text-green-500 mx-auto mb-2" />
             <div className="text-xl font-bold">
-              {news.filter(item => item.type === 'achievement').length}
+              {getNewsByType('achievement').length}
             </div>
             <div className="text-sm text-gray-600">Achievements</div>
           </CardContent>
@@ -82,7 +82,7 @@ export function NewsSection() {
         <Card className="text-center">
           <CardContent className="p-4">
             <Newspaper className="h-6 w-6 text-purple-500 mx-auto mb-2" />
-            <div className="text-xl font-bold">{news.length}</div>
+            <div className="text-xl font-bold">{getPublishedNews().length}</div>
             <div className="text-sm text-gray-600">Total Updates</div>
           </CardContent>
         </Card>

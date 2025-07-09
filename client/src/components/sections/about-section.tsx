@@ -56,17 +56,23 @@ export function AboutSection() {
                 Dr. S.N. Omkar is a Chief Research Scientist in the Guidance & Control area of the Department of Aerospace Engineering at Indian Institute of Science, Bangalore. He leads three specialized research laboratories focusing on computational intelligence, UAV systems, and biomechanics applications in aerospace engineering.
               </p>
 
-              <div className="flex space-x-2">
+              <div className="flex flex-wrap gap-2">
                 <Button size="sm" variant="outline" asChild>
-                  <a href="https://sites.google.com/site/compintellab/" target="_blank">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Lab Website
+                  <a href="https://iiscprofiles.irins.org/profile/3996" target="_blank" rel="noopener noreferrer">
+                    <img src="https://irins.inflibnet.ac.in/irins/assets/img/irins_logo.png" alt="IRINS" className="h-4 w-4 mr-2" />
+                    IRINS Profile
                   </a>
                 </Button>
                 <Button size="sm" variant="outline" asChild>
-                  <a href="https://iiscprofiles.irins.org/profile/3996" target="_blank">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    IRINS Profile
+                  <a href="https://www.researchgate.net/profile/Omkar-S-N" target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" className="h-4 w-4 mr-2" />
+                    ResearchGate
+                  </a>
+                </Button>
+                <Button size="sm" variant="outline" asChild>
+                  <a href="https://in.linkedin.com/in/dr-s-n-omkar-803550270" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" className="h-4 w-4 mr-2" />
+                    LinkedIn
                   </a>
                 </Button>
               </div>

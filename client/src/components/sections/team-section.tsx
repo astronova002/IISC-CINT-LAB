@@ -2,14 +2,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Mail, ExternalLink, Users, GraduationCap } from "lucide-react";
-import { teamMembers } from "@/data/lab-data";
+import { adminTeamMembers, getActiveTeamMembers } from "@/data/admin-data";
 
 export function TeamSection() {
-  const facultyMembers = teamMembers.filter(member => member.category === "faculty");
-  const students = teamMembers.filter(member => member.category === "phd" || member.category === "masters");
-  const alumni = teamMembers.filter(member => member.category === "alumni");
+  const facultyMembers = getActiveTeamMembers("faculty");
+  const phdStudents = getActiveTeamMembers("phd");
+  const masterStudents = getActiveTeamMembers("masters");
+  const alumni = getActiveTeamMembers("alumni");
+  const allStudents = [...phdStudents, ...masterStudents];
 
-  const TeamCard = ({ member, index }: { member: typeof teamMembers[0], index: number }) => (
+  const TeamCard = ({ member, index }: { member: typeof adminTeamMembers[0], index: number }) => (
     <Card key={index} className="hover:shadow-lg transition-shadow">
       <CardContent className="p-4">
         <div className="flex items-center space-x-4">
@@ -55,7 +57,7 @@ export function TeamSection() {
         <Card className="text-center">
           <CardContent className="p-4">
             <GraduationCap className="h-6 w-6 text-green-500 mx-auto mb-2" />
-            <div className="text-xl font-bold">{students.length}</div>
+            <div className="text-xl font-bold">{allStudents.length}</div>
             <div className="text-sm text-gray-600">Students</div>
           </CardContent>
         </Card>
@@ -88,7 +90,7 @@ export function TeamSection() {
           Current Students
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {students.map((member, index) => (
+          {allStudents.map((member, index) => (
             <TeamCard key={index} member={member} index={index} />
           ))}
         </div>
