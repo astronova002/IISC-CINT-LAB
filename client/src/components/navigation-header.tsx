@@ -33,7 +33,7 @@ export function NavigationHeader({ currentSection, onNavigate }: NavigationHeade
                 className="h-10 w-10"
               />
               <div>
-                <h1 className="text-lg font-bold text-gray-900">Dr. S.N. Omkar's Labs</h1>
+                <h1 className="text-lg font-bold text-gray-900">Computational Intelligence Laboratory</h1>
                 <p className="text-xs text-gray-600">IISc Aerospace Engineering</p>
               </div>
             </div>

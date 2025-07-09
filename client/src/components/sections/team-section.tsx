@@ -115,7 +115,7 @@ export function TeamSection() {
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-gray-600">
-              Dr. Omkar's laboratories offer research opportunities for:
+              The Computational Intelligence Laboratory offers research opportunities for:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>

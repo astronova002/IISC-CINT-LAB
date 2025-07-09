@@ -22,7 +22,7 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
               className="h-16 w-16"
             />
             <div className="text-left">
-              <h1 className="text-3xl font-bold">Dr. S.N. Omkar's Research Laboratories</h1>
+              <h1 className="text-3xl font-bold">Computational Intelligence Laboratory</h1>
               <p className="text-xl text-blue-200">Department of Aerospace Engineering, IISc Bangalore</p>
             </div>
           </div>

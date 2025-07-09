@@ -48,7 +48,7 @@ export function BrandingFooter() {
           <p className="text-sm text-gray-400">
             © 2025 Indian Institute of Science. All rights reserved. 
             <span className="mx-2">|</span>
-            Dr. S.N. Omkar's Research Laboratories
+            Computational Intelligence Laboratory
           </p>
         </div>
       </div>

@@ -59,7 +59,7 @@ export function ContactSection() {
       {/* Header */}
       <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Contact Information</h2>
-        <p className="text-gray-600">Get in touch with Dr. S.N. Omkar's research team</p>
+        <p className="text-gray-600">Get in touch with the Computational Intelligence Laboratory team</p>
       </div>
 
       {/* Contact Cards */}
@@ -97,8 +97,8 @@ export function ContactSection() {
         <CardContent>
           <div className="space-y-2">
             <p className="text-sm text-gray-600">
-              <strong>Dr. S.N. Omkar</strong><br />
-              Chief Research Scientist<br />
+              <strong>Computational Intelligence Laboratory</strong><br />
+              Dr. S.N. Omkar, Chief Research Scientist<br />
               Department of Aerospace Engineering<br />
               Room AE123, IISc Campus<br />
               Bangalore, Karnataka 560012<br />
@@ -146,7 +146,7 @@ export function ContactSection() {
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-gray-600">
-              Dr. Omkar's laboratories welcome collaboration opportunities in:
+              The Computational Intelligence Laboratory welcomes collaboration opportunities in:
             </p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Computational Intelligence</Badge>

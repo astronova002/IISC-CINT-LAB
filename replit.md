@@ -1,8 +1,8 @@
-# Dr. S.N. Omkar's Research Labs Website
+# Computational Intelligence Laboratory Website
 
 ## Overview
 
-This is a modern, responsive academic website for Dr. S.N. Omkar's research laboratories at the Department of Aerospace Engineering, Indian Institute of Science (IISc), Bangalore. The application showcases three specialized labs: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab. The website features authentic research data, publications, and achievements based on Dr. Omkar's actual work including his BBC-featured violence detection research, satellite image processing projects, and biomechanics applications in aerospace.
+This is a modern, responsive academic website for the Computational Intelligence Laboratory at the Department of Aerospace Engineering, Indian Institute of Science (IISc), Bangalore, led by Dr. S.N. Omkar. The application showcases three specialized labs: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab. The website features authentic research data, publications, and achievements based on Dr. Omkar's actual work including his BBC-featured violence detection research, satellite image processing projects, and biomechanics applications in aerospace.
 
 ## User Preferences
 
