@@ -1,0 +1,36 @@
+
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- IISc Logo Recreation -->
+  <circle cx="120" cy="120" r="115" fill="#003366" stroke="#FFD700" stroke-width="5"/>
+  
+  <!-- Central emblem -->
+  <circle cx="120" cy="120" r="90" fill="#FFD700"/>
+  <circle cx="120" cy="120" r="85" fill="#003366"/>
+  
+  <!-- Sanskrit text representation -->
+  <text x="120" y="80" font-family="serif" font-size="12" fill="#FFD700" text-anchor="middle" font-weight="bold">
+    सत्यमेव जयते
+  </text>
+  
+  <!-- Central symbol -->
+  <circle cx="120" cy="120" r="35" fill="#FFD700"/>
+  <circle cx="120" cy="120" r="30" fill="#003366"/>
+  
+  <!-- Lamp of knowledge -->
+  <path d="M105 110 L135 110 L130 130 L110 130 Z" fill="#FFD700"/>
+  <path d="M115 100 L125 100 L127 110 L113 110 Z" fill="#FFD700"/>
+  <circle cx="120" cy="105" r="3" fill="#FF6600"/>
+  
+  <!-- Year 1909 -->
+  <text x="120" y="160" font-family="serif" font-size="14" fill="#FFD700" text-anchor="middle" font-weight="bold">
+    1909
+  </text>
+  
+  <!-- Bottom text -->
+  <text x="120" y="200" font-family="serif" font-size="10" fill="#FFD700" text-anchor="middle">
+    INDIAN INSTITUTE OF SCIENCE
+  </text>
+  <text x="120" y="215" font-family="serif" font-size="8" fill="#FFD700" text-anchor="middle">
+    BANGALORE
+  </text>
+</svg>
