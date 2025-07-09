@@ -1,0 +1,88 @@
+Create a modern, responsive, and accessible academic lab website for CINT Lab – IISc Bangalore, inspired by the design and layout of the MIT CSAIL website.
+Use HTML5, Tailwind CSS, and vanilla JavaScript (only if needed).
+Structure it as a single-page MVP or split into multiple static pages (index.html, about.html, etc.).
+
+🏗️ Website Structure & Sections
+1. Navbar (Sticky)
+Logo on the left (CINT Lab or IISc logo placeholder)
+
+Menu items: Home, About, Lab, Team, Publications, News & Events, Contact
+
+Mobile responsive with hamburger drawer on small screens
+
+2. Hero Section
+Large banner image or color background
+
+Chief Scientist's photo and intro text
+
+Lab's mission tagline
+Example: “Advancing Intelligent Aerospace Systems through AI & Robotics.”
+
+3. Highlights Section
+Grid of 3–6 research highlights or featured projects
+
+Cards with icons/images, short title, and a "Read more" link
+
+4. About Section (/about.html)
+Mission, Vision, History (use timeline layout or cards)
+
+Optional: Embedded quote from the Chief Scientist
+
+5. Chief Scientist Section (/chief-scientist.html)
+Photo, name, title, bio, contact info, and social media links
+
+Academic style design (centered content + serif fonts)
+
+6. Lab Section (/lab.html)
+Overview of lab focus areas (AI, Vision, UAVs, etc.)
+
+Cards for each ongoing project with title, description
+
+7. Team Section (/team.html)
+Grid of cards: Faculty, PhD Students, Collaborators
+
+Filter by role (optional JS)
+
+8. Publications Section (/publications.html)
+List format with title, authors, venue, and year
+
+Optionally group by year
+
+9. News & Events Section (/news.html)
+Blog-style or card-style updates
+
+Include date, title, and short snippet
+
+10. Footer
+Contact details
+
+IISc logo
+
+Social media links
+
+© 2025 CINT Lab, IISc. All rights reserved.
+
+✅ Technical Requirements
+📱 Responsive on Android, iOS, tablets, and desktop
+
+🌐 Use Tailwind CSS CDN for simplicity
+
+🖼️ Use WebP format images for optimization
+
+♿ Semantic HTML with aria-* attributes and keyboard support
+
+🎨 Consistent font and color palette (academic tones: navy, grey, white)
+
+📁 File Structure (for Replit)
+bash
+Copy
+Edit
+/index.html
+/about.html
+/chief-scientist.html
+/lab.html
+/team.html
+/publications.html
+/news.html
+/contact.html
+/styles.css (optional if not using CDN)
