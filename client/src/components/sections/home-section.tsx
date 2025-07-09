@@ -15,15 +15,16 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
       <div className="relative bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-lg p-8 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-4 mb-6">
+          <div className="flex items-center justify-center space-x-6 mb-6">
             <img 
-              src="https://seeklogo.com/images/I/indian-institute-of-science-logo-1B0E139DA3-seeklogo.com.png" 
-              alt="IISc Logo" 
-              className="h-16 w-16"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Indian_Institute_of_Science_Logo.svg/240px-Indian_Institute_of_Science_Logo.svg.png" 
+              alt="Indian Institute of Science Logo" 
+              className="h-20 w-20 bg-white rounded-full p-2"
             />
             <div className="text-left">
               <h1 className="text-3xl font-bold">Computational Intelligence Laboratory</h1>
-              <p className="text-xl text-blue-200">Department of Aerospace Engineering, IISc Bangalore</p>
+              <p className="text-xl text-blue-200">Department of Aerospace Engineering</p>
+              <p className="text-lg text-blue-300">Indian Institute of Science, Bangalore</p>
             </div>
           </div>
           
