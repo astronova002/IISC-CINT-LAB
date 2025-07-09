@@ -17,7 +17,7 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-6 mb-6">
             <img 
-              src="/iisc-logo.png" 
+              src="/iisc-logo.svg" 
               alt="Indian Institute of Science Logo" 
               className="h-20 w-20 bg-white rounded-full p-2"
             />

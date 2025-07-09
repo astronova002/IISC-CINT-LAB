@@ -7,7 +7,7 @@ export function BrandingFooter() {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
               <img 
-                src="/iisc-logo.png" 
+                src="/iisc-logo.svg" 
                 alt="IISc Logo" 
                 className="h-12 w-12 bg-white rounded-full p-1"
               />
