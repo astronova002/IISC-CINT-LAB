@@ -1,8 +1,8 @@
-import { RealtimeStats } from "@/components/real-time-stats";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, BookOpen, Award, Users } from "lucide-react";
 
 interface HomeSectionProps {
   onNavigate: (section: string) => void;
@@ -45,8 +45,37 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
         </div>
       </div>
 
-      {/* Real-time Stats */}
-      <RealtimeStats />
+      {/* Research Impact Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Card className="text-center">
+          <CardContent className="p-4">
+            <BookOpen className="h-6 w-6 text-blue-500 mx-auto mb-2" />
+            <div className="text-xl font-bold">164+</div>
+            <div className="text-sm text-gray-600">Publications</div>
+          </CardContent>
+        </Card>
+        <Card className="text-center">
+          <CardContent className="p-4">
+            <Award className="h-6 w-6 text-green-500 mx-auto mb-2" />
+            <div className="text-xl font-bold">4,193+</div>
+            <div className="text-sm text-gray-600">Citations</div>
+          </CardContent>
+        </Card>
+        <Card className="text-center">
+          <CardContent className="p-4">
+            <Award className="h-6 w-6 text-purple-500 mx-auto mb-2" />
+            <div className="text-xl font-bold">35</div>
+            <div className="text-sm text-gray-600">H-Index</div>
+          </CardContent>
+        </Card>
+        <Card className="text-center">
+          <CardContent className="p-4">
+            <Users className="h-6 w-6 text-orange-500 mx-auto mb-2" />
+            <div className="text-xl font-bold">200+</div>
+            <div className="text-sm text-gray-600">Trained Interns</div>
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Featured Research - Compact Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

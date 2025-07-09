@@ -11,12 +11,12 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes (January 2025)
 
 ✓ Completely transformed website from horizontal scrolling to compact navigation-based layout
-✓ Implemented real-time data integration with live research metrics and updates
+✓ Added static research metrics displaying authentic publication and citation data
 ✓ Added official IISc branding and logos throughout the website
 ✓ Created 7 distinct sections: Home, About, Research, Team, Publications, News, Contact
 ✓ Integrated Dr. S.N. Omkar's actual photo from IISc website
 ✓ Added authentic collaborator information from his research publications
-✓ Implemented live statistics updates every 30 seconds
+✓ Display authentic research impact statistics from official sources
 ✓ Enhanced with official IISc Department of Aerospace Engineering branding
 
 ## System Architecture
@@ -40,12 +40,12 @@ Preferred communication style: Simple, everyday language.
 ### Key Design Decisions
 
 1. **Navigation-Based Layout**: Completely redesigned from horizontal scrolling to compact navigation-based interface
-2. **Real-Time Data Integration**: Live updates for research metrics, citations, and news
+2. **Authentic Research Data**: Static display of verified research metrics and achievements
 3. **Official IISc Branding**: Integrated official IISc logos and Department of Aerospace Engineering branding
 4. **Compact Sections**: Each section is self-contained with minimal scrolling required
 5. **Authentic Data Only**: All information sourced from official IISc profiles and research publications
 6. **Responsive Design**: Mobile-first approach optimized for all device types
-7. **Component-Based Architecture**: Modular React components for each section with dedicated hooks for real-time data
+7. **Component-Based Architecture**: Modular React components for each section with clean data presentation
 
 ## Key Components
 
