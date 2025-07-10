@@ -11,41 +11,6 @@ interface HomeSectionProps {
 export function HomeSection({ onNavigate }: HomeSectionProps) {
   return (
     <div className="space-y-8">
-      {/* Hero Section - Compact */}
-      <div className="relative bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-lg p-8 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-6 mb-6">
-            <img 
-              src="/iisc-logo.svg" 
-              alt="Indian Institute of Science Logo" 
-              className="h-20 w-20 bg-white rounded-full p-2"
-            />
-            <div className="text-left">
-              <h1 className="text-3xl font-bold">Computational Intelligence Laboratory</h1>
-              <p className="text-xl text-blue-200">Department of Aerospace Engineering</p>
-              <p className="text-lg text-blue-300">Indian Institute of Science, Bangalore</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
-            <Badge variant="secondary">Computational Intelligence</Badge>
-            <Badge variant="secondary">UAV Systems</Badge>
-            <Badge variant="secondary">Biomechanics</Badge>
-            <Badge variant="secondary">Satellite Image Processing</Badge>
-          </div>
-
-          <div className="flex justify-center space-x-4">
-            <Button onClick={() => onNavigate("research")} className="bg-white text-blue-900 hover:bg-gray-100">
-              View Research <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" onClick={() => onNavigate("publications")} className="text-white border-white hover:bg-white/10">
-              Publications
-            </Button>
-          </div>
-        </div>
-      </div>
-
       {/* Research Impact Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card className="text-center">

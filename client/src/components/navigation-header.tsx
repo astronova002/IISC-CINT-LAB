@@ -21,71 +21,39 @@ export function NavigationHeader({ currentSection, onNavigate }: NavigationHeade
   ];
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50 py-4 md:py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo and Title */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="https://seeklogo.com/images/I/indian-institute-of-science-logo-1B0E139DA3-seeklogo.com.png" 
-                alt="IISc Logo" 
-                className="h-10 w-10"
-              />
-              <div>
-                <h1 className="text-lg font-bold text-gray-900">Computational Intelligence Laboratory</h1>
-                <p className="text-xs text-gray-600">IISc Aerospace Engineering</p>
-              </div>
-            </div>
+        <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-2 md:py-0 w-full gap-y-4 md:gap-y-0">
+          {/* Left: Logos */}
+          <div className="flex items-center space-x-3 w-full md:w-auto justify-center md:justify-start mb-2 md:mb-0">
+            <img 
+              src="/cint-lab-logo.png" 
+              alt="CINT Lab Logo" 
+              className="h-12 w-auto object-contain" 
+            />
+            <img 
+              src="/iisc-logo.png" 
+              alt="IISc Logo" 
+              className="h-12 w-auto object-contain" 
+            />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1">
-            {navItems.map((item) => (
-              <Button
-                key={item.id}
-                variant={currentSection === item.id ? "default" : "ghost"}
-                size="sm"
-                onClick={() => onNavigate(item.id)}
-                className="flex items-center space-x-2"
-              >
-                <span>{item.icon}</span>
-                <span>{item.label}</span>
-              </Button>
-            ))}
-          </nav>
+          {/* Center: Lab Title and Institute */}
+          <div className="flex flex-col items-center flex-1">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900 text-center">Computational Intelligence Laboratory</h1>
+            <p className="text-sm md:text-base text-gray-600 text-center">Department of Aerospace, Indian Institute of Science, Bangalore</p>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          {/* Right: Social Media */}
+          <div className="flex items-center space-x-3 w-full md:w-auto justify-center md:justify-end mt-2 md:mt-0">
+            <a href="https://twitter.com/YOUR_X_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" className="h-7 w-7 hover:opacity-80 transition" />
+            </a>
+            <a href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" className="h-7 w-7 hover:opacity-80 transition" />
+            </a>
+          </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-2 space-y-1">
-            {navItems.map((item) => (
-              <Button
-                key={item.id}
-                variant={currentSection === item.id ? "default" : "ghost"}
-                size="sm"
-                onClick={() => {
-                  onNavigate(item.id);
-                  setIsMenuOpen(false);
-                }}
-                className="w-full justify-start"
-              >
-                <span className="mr-2">{item.icon}</span>
-                <span>{item.label}</span>
-              </Button>
-            ))}
-          </div>
-        )}
       </div>
     </header>
   );
