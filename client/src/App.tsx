@@ -22,7 +22,6 @@ import PeopleStaff from "@/pages/people/staff.tsx";
 import PeopleAlumni from "@/pages/people/alumni.tsx";
 // Research and subpages
 import Research from "@/pages/research/index";
-import ResearchStreams from "@/pages/research/streams.tsx";
 import ResearchSpecialInterests from "@/pages/research/special-interests";
 import ResearchFacilities from "@/pages/research/facilities";
 import ResearchReports from "@/pages/research/reports";
@@ -33,6 +32,7 @@ import ContactReaching from "@/pages/contact/reaching";
 import ContactContactInfo from "@/pages/contact/contact-info.tsx";
 import ContactVisitorInfo from "@/pages/contact/visitor-info.tsx";
 import ContactFeedback from "@/pages/contact/feedback.tsx";
+import AdminDashboard from "@/pages/admin";
 
 function Router() {
   return (
@@ -51,7 +51,7 @@ function Router() {
       <Route path="/people/staff" component={PeopleStaff} />
       <Route path="/people/alumni" component={PeopleAlumni} />
       <Route path="/research" component={Research} />
-      <Route path="/research/streams" component={ResearchStreams} />
+      {/* <Route path="/research/streams" component={ResearchStreams} /> */}
       <Route path="/research/special-interests" component={ResearchSpecialInterests} />
       <Route path="/research/facilities" component={ResearchFacilities} />
       <Route path="/research/reports" component={ResearchReports} />
@@ -62,6 +62,7 @@ function Router() {
       <Route path="/contact/contact-info" component={ContactContactInfo} />
       <Route path="/contact/visitor-info" component={ContactVisitorInfo} />
       <Route path="/contact/feedback" component={ContactFeedback} />
+      <Route path="/admin" component={AdminDashboard} />
       <Route component={NotFound} />
     </Switch>
   );

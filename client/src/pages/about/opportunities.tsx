@@ -17,7 +17,6 @@ export default function AboutOpportunities() {
         </div>
       </div>
       <main className="flex-1 w-full max-w-screen-xl mx-auto py-12 px-4">
-        <Link href="/about" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition mb-6 inline-block">&larr; Back to About Us</Link>
         <h1 className="text-3xl font-bold text-blue-900 mb-4">Opportunities</h1>
         <p>This is the Opportunities page.</p>
       </main>

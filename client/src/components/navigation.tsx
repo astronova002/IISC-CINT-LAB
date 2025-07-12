@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
+import { ChevronDown } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -18,7 +19,7 @@ const navItems = [
     { label: "Alumni", href: "/people/alumni" },
   ]},
   { label: "Research", href: "/research", dropdown: [
-    { label: "Streams", href: "/research/streams" },
+    { label: "Projects", href: "/research/streams" },
     { label: "Special Interests", href: "/research/special-interests" },
     { label: "Facilities", href: "/research/facilities" },
     { label: "Reports", href: "/research/reports" },
@@ -53,58 +54,59 @@ export function MainNavBar() {
   }, [isMobile, openDropdown]);
 
   return (
-    <nav aria-label="Main Navigation" className="w-full bg-white border-b border-gray-200">
-      <ul ref={navRef} className="flex flex-wrap justify-center items-center gap-2 md:gap-6 py-2" style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+    <nav aria-label="Main Navigation" className="w-full bg-gray-400 border-b border-gray-400">
+      <ul ref={navRef} className="flex flex-wrap justify-center items-center gap-3 md:gap-8 py-2" style={{ margin: 0, padding: 0, listStyle: 'none' }}>
         {navItems.map((item) => (
           <li
             key={item.label}
             className="relative group"
             style={{ position: 'relative' }}
-            onMouseEnter={() => !isMobile && item.dropdown && setOpenDropdown(item.label)}
-            onMouseLeave={() => !isMobile && item.dropdown && setOpenDropdown(null)}
           >
-            <Link
-              href={item.href}
-              className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-900 hover:underline hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-700"
-              aria-haspopup={item.dropdown ? "true" : undefined}
-              aria-expanded={openDropdown === item.label ? "true" : undefined}
-              tabIndex={0}
-              id={`nav-btn-${item.label.replace(/\s+/g, '').toLowerCase()}`}
-              onClick={e => {
-                if (isMobile && item.dropdown) {
-                  e.preventDefault();
-                  setOpenDropdown(openDropdown === item.label ? null : item.label);
-                }
-              }}
+            <div
+              onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
+              onMouseLeave={() => item.dropdown && setOpenDropdown(null)}
             >
-              {item.label}
-            </Link>
-            {item.dropdown && (
-              <ul
-                className={`dropdown-menu absolute left-1/2 -translate-x-1/2 mt-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-10 transition-all duration-200 ease-in-out
-                  ${openDropdown === item.label ? 'opacity-100 visible pointer-events-auto translate-y-0' : 'opacity-0 invisible pointer-events-none -translate-y-2'}
-                  group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
-                `}
-                role="menu"
-                aria-label={item.label + ' submenu'}
-                onMouseEnter={() => !isMobile && setOpenDropdown(item.label)}
-                onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+              <Link
+                href={item.href}
+                className={`nav-btn px-5 py-2 rounded-lg font-semibold text-white bg-primary transition-all duration-300 ease-in-out shadow-md hover:bg-accent hover:text-primary hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent ${openDropdown === item.label ? 'ring-2 ring-accent' : ''} flex items-center gap-2`}
+                aria-haspopup={item.dropdown ? "true" : undefined}
+                aria-expanded={openDropdown === item.label ? "true" : undefined}
+                tabIndex={0}
+                id={`nav-btn-${item.label.replace(/\s+/g, '').toLowerCase()}`}
+                onClick={e => {
+                  if (item.dropdown) {
+                    e.preventDefault();
+                    setOpenDropdown(openDropdown === item.label ? null : item.label);
+                  }
+                }}
+                onFocus={() => item.dropdown && setOpenDropdown(item.label)}
               >
-                {item.dropdown.map((sub) => (
-                  <li key={sub.label} role="none">
-                    <Link
-                      href={sub.href}
-                      className="block px-4 py-2 text-blue-900 bg-white hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white transition-colors rounded"
-                      role="menuitem"
-                      tabIndex={0}
-                      onClick={() => setOpenDropdown(null)}
-                    >
-                      {sub.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+                {item.label}
+                {item.dropdown && <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} />}
+              </Link>
+              {item.dropdown && (
+                <ul
+                  className={`dropdown-menu absolute left-1/2 -translate-x-1/2 w-56 bg-white border border-gray-200 rounded shadow-lg z-10 transition-all duration-300 ease-in-out origin-top scale-95 opacity-0 pointer-events-none ${openDropdown === item.label ? 'scale-100 opacity-100 pointer-events-auto' : ''}`}
+                  style={{ top: '100%', left: '50%', transform: 'translateX(-50%)', marginTop: 0, paddingTop: 2 }}
+                  role="menu"
+                  aria-label={item.label + ' submenu'}
+                >
+                  {item.dropdown.map((sub) => (
+                    <li key={sub.label} role="none">
+                      <Link
+                        href={sub.href}
+                        className="block px-4 py-2 text-blue-900 bg-white hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white transition-colors rounded"
+                        role="menuitem"
+                        tabIndex={0}
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        {sub.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </li>
         ))}
       </ul>

@@ -17,7 +17,6 @@ export default function ContactReaching() {
         </div>
       </div>
       <main className="flex-1 w-full max-w-screen-xl mx-auto py-12 px-4">
-        <Link href="/contact" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition mb-6 inline-block">&larr; Back to Contact Us</Link>
         <h1 className="text-3xl font-bold text-blue-900 mb-4">Reaching</h1>
         <p>This is the Reaching page.</p>
       </main>
