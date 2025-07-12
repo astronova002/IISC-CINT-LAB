@@ -27,6 +27,7 @@ export interface NewsItem {
   summary: string;
   date: string;
   type: 'award' | 'news' | 'collaboration' | 'achievement';
+  image?: string; // Optional image URL
 }
 
 export interface Event {
@@ -225,28 +226,48 @@ export const news: NewsItem[] = [
     title: "Dr. S.N. Omkar Featured by BBC for Violence Detection Research",
     summary: "Dr. Omkar's groundbreaking work on recognizing violence in crowds using drone-computing was featured in a BBC interview, highlighting the real-world applications of UAV surveillance systems.",
     date: "November 15, 2024",
-    type: "news"
+    type: "news",
+    image: "/drone-surveillance.jpg"
   },
   {
     id: "2",
     title: "International Day of Yoga Celebrations Led by Dr. Omkar",
     summary: "Dr. Omkar, with 4+ decades of yoga expertise, led the International Day of Yoga celebrations at IISc, conducting Yoga Kshema sessions for the campus community.",
     date: "June 21, 2024",
-    type: "achievement"
+    type: "achievement",
+    image: "/yoga-celebration.jpg"
   },
   {
     id: "3",
     title: "New Research on Urban Growth Analysis Published",
     summary: "Our lab's latest research on multi-temporal satellite image analysis for Bangalore region using Landsat data over 39-year periods has been published in leading remote sensing journals.",
     date: "April 10, 2024",
-    type: "news"
+    type: "news",
+    image: "/satellite-analysis.jpg"
   },
   {
     id: "4",
     title: "Collaborative Research with TCS and Industry Partners",
     summary: "Dr. Omkar serves as Research Advisor to Tata Consultancy Services, fostering industry-academia collaboration in UAV technology and satellite image processing applications.",
     date: "March 5, 2024",
-    type: "collaboration"
+    type: "collaboration",
+    image: "/tcs-collaboration.jpg"
+  },
+  {
+    id: "5",
+    title: "CINT Lab Wins Best Research Award 2024",
+    summary: "The Computational Intelligence Laboratory has been recognized with the prestigious Best Research Award for innovative contributions in UAV technology and satellite image processing.",
+    date: "February 20, 2024",
+    type: "award",
+    image: "/research-award.jpg"
+  },
+  {
+    id: "6",
+    title: "New UAV Testing Facility Inaugurated",
+    summary: "State-of-the-art UAV testing facility opened at IISc, featuring advanced flight simulators and autonomous navigation testing equipment for cutting-edge research.",
+    date: "January 15, 2024",
+    type: "achievement",
+    image: "/uav-facility.jpg"
   }
 ];
 

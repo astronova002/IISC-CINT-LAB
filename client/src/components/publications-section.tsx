@@ -50,8 +50,8 @@ export function PublicationsSection() {
             <div className="text-gray-600">H-Index</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold academic-brown mb-2">{stats.patents}</div>
-            <div className="text-gray-600">Patents</div>
+            <div className="text-3xl font-bold academic-brown mb-2">{stats.trainedInterns}</div>
+            <div className="text-gray-600">Trained Interns</div>
           </div>
         </div>
         

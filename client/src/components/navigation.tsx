@@ -55,7 +55,7 @@ export function MainNavBar() {
 
   return (
     <nav aria-label="Main Navigation" className="w-full bg-gray-400 border-b border-gray-400">
-      <ul ref={navRef} className="flex flex-wrap justify-center items-center gap-3 md:gap-8 py-2" style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+      <ul ref={navRef} className="flex flex-wrap justify-center items-center gap-3 md:gap-8 py-2 w-full" style={{ margin: 0, padding: 0, listStyle: 'none' }}>
         {navItems.map((item) => (
           <li
             key={item.label}
@@ -68,7 +68,7 @@ export function MainNavBar() {
             >
               <Link
                 href={item.href}
-                className={`nav-btn px-5 py-2 rounded-lg font-semibold text-white bg-primary transition-all duration-300 ease-in-out shadow-md hover:bg-accent hover:text-primary hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent ${openDropdown === item.label ? 'ring-2 ring-accent' : ''} flex items-center gap-2`}
+                className={`nav-btn px-5 py-2 rounded-lg font-semibold text-white bg-black/80 border border-white/30 transition-all duration-300 ease-in-out shadow-md hover:bg-black/90 hover:border-white/50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50 ${openDropdown === item.label ? 'ring-2 ring-white/50' : ''} flex items-center gap-2`}
                 aria-haspopup={item.dropdown ? "true" : undefined}
                 aria-expanded={openDropdown === item.label ? "true" : undefined}
                 tabIndex={0}
@@ -86,7 +86,7 @@ export function MainNavBar() {
               </Link>
               {item.dropdown && (
                 <ul
-                  className={`dropdown-menu absolute left-1/2 -translate-x-1/2 w-56 bg-white border border-gray-200 rounded shadow-lg z-10 transition-all duration-300 ease-in-out origin-top scale-95 opacity-0 pointer-events-none ${openDropdown === item.label ? 'scale-100 opacity-100 pointer-events-auto' : ''}`}
+                  className={`dropdown-menu absolute left-1/2 -translate-x-1/2 w-56 bg-black/95 backdrop-blur-sm border border-white/30 rounded shadow-lg z-10 transition-all duration-300 ease-in-out origin-top scale-95 opacity-0 pointer-events-none ${openDropdown === item.label ? 'scale-100 opacity-100 pointer-events-auto' : ''}`}
                   style={{ top: '100%', left: '50%', transform: 'translateX(-50%)', marginTop: 0, paddingTop: 2 }}
                   role="menu"
                   aria-label={item.label + ' submenu'}
@@ -95,7 +95,7 @@ export function MainNavBar() {
                     <li key={sub.label} role="none">
                       <Link
                         href={sub.href}
-                        className="block px-4 py-2 text-blue-900 bg-white hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white transition-colors rounded"
+                        className="block px-4 py-2 text-white bg-black/80 hover:bg-black/90 hover:text-white focus:bg-black/90 focus:text-white transition-colors rounded border border-white/10 hover:border-white/30"
                         role="menuitem"
                         tabIndex={0}
                         onClick={() => setOpenDropdown(null)}

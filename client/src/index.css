@@ -61,8 +61,118 @@
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply font-sans antialiased bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure full width layout */
+  .w-full {
+    width: 100% !important;
+  }
+
+  /* Remove any horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure containers stretch to full width */
+  .container, .max-w-7xl, .max-w-6xl, .max-w-4xl, .max-w-2xl {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Custom shadow for hover effect */
+  .shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Continuous scroll animation */
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* Scroll up animation (from footer to header) */
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-200%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll linear infinite;
+  }
+
+  .animate-scroll-up {
+    animation: scroll-up linear infinite;
+  }
+
+  .animate-pause {
+    animation-play-state: paused;
+  }
+
+  /* Carousel header styles */
+  .carousel-header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .carousel-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .carousel-divider {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    height: 2px;
+    border-radius: 1px;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
   }
 }
 

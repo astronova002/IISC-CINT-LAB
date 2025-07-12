@@ -56,7 +56,7 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
             <p className="text-sm text-gray-600 mb-2">
               BBC-featured research on crowd violence detection using drone surveillance and CNN.
             </p>
-            <Badge variant="outline">Featured by BBC</Badge>
+            <Badge className="bg-black/80 text-white border-white/30" variant="outline">Featured by BBC</Badge>
           </CardContent>
         </Card>
 
@@ -71,7 +71,7 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
             <p className="text-sm text-gray-600 mb-2">
               Advanced satellite image processing for urban growth analysis and crop classification.
             </p>
-            <Badge variant="outline">High Impact</Badge>
+            <Badge className="bg-black/80 text-white border-white/30" variant="outline">High Impact</Badge>
           </CardContent>
         </Card>
 
@@ -86,25 +86,45 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
             <p className="text-sm text-gray-600 mb-2">
               Biomechanics applications in aerospace engineering and human space missions.
             </p>
-            <Badge variant="outline">Innovative</Badge>
+            <Badge className="bg-black/80 text-white border-white/30" variant="outline">Innovative</Badge>
           </CardContent>
         </Card>
       </div>
 
       {/* Quick Links */}
-      <div className="bg-gray-50 rounded-lg p-6">
-        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+      <div className="bg-black/90 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+        <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Button variant="outline" size="sm" onClick={() => onNavigate("team")}>
+          <Button 
+            className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+            variant="outline" 
+            size="sm" 
+            onClick={() => onNavigate("team")}
+          >
             Meet the Team
           </Button>
-          <Button variant="outline" size="sm" onClick={() => onNavigate("publications")}>
+          <Button 
+            className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+            variant="outline" 
+            size="sm" 
+            onClick={() => onNavigate("publications")}
+          >
             Latest Publications
           </Button>
-          <Button variant="outline" size="sm" onClick={() => onNavigate("news")}>
+          <Button 
+            className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+            variant="outline" 
+            size="sm" 
+            onClick={() => onNavigate("news")}
+          >
             Recent News
           </Button>
-          <Button variant="outline" size="sm" onClick={() => onNavigate("contact")}>
+          <Button 
+            className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+            variant="outline" 
+            size="sm" 
+            onClick={() => onNavigate("contact")}
+          >
             Contact Us
           </Button>
         </div>

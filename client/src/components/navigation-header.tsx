@@ -22,7 +22,7 @@ export function NavigationHeader({ currentSection, onNavigate }: NavigationHeade
 
   return (
     <header className="bg-gray-400 backdrop-blur-sm w-full py-2 md:py-3">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="relative flex flex-col md:flex-row items-center justify-center h-auto md:h-24 w-full gap-y-2 md:gap-y-0">
           {/* Top Left: Logos */}
           <div className="absolute left-0 top-0 flex items-center space-x-4 pl-2 pt-2">
