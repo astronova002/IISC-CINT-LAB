@@ -11,14 +11,11 @@ export default function People() {
         <MainNavBar />
       </div>
       <main className="flex-1 w-full py-12 px-4">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4">People</h1>
+        <h1 className="text-3xl font-bold text-blue-900 mb-4 font-display">People</h1>
         <nav aria-label="People Subpages" className="mb-8">
           <ul className="flex flex-wrap gap-4">
-            <li><Link href="/people/faculty" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Faculty</Link></li>
             <li><Link href="/people/interns" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Interns</Link></li>
             <li><Link href="/people/researchers" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Researchers</Link></li>
-            <li><Link href="/people/committee" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Committee Members</Link></li>
-            <li><Link href="/people/staff" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Staff</Link></li>
             <li><Link href="/people/alumni" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Alumni</Link></li>
           </ul>
         </nav>

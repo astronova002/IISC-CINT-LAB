@@ -17,7 +17,7 @@ export default function ContactChiefScientist() {
         </div>
       </div>
       <main className="flex-1 w-full max-w-screen-xl mx-auto py-12 px-4">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4">Chief Scientist Contact</h1>
+        <h1 className="text-3xl font-bold text-blue-900 mb-4 font-display">Chief Scientist Contact</h1>
         <p>This is the Chief Scientist Contact page.</p>
       </main>
       <footer className="w-full bg-gray-900 text-white mt-auto">

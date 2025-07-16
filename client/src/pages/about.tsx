@@ -11,7 +11,7 @@ export default function About() {
         <MainNavBar />
       </div>
       <main className="flex-1 w-full py-12 px-4">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4">About Us</h1>
+        <h1 className="text-3xl font-bold text-blue-900 mb-4 font-display">About Us</h1>
         <nav aria-label="About Us Subpages" className="mb-8">
           <ul className="flex flex-wrap gap-4">
             <li><Link href="/about/chairperson" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Chairperson</Link></li>

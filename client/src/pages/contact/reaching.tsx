@@ -1,27 +1,31 @@
 import { NavigationHeader } from "@/components/navigation-header";
 import { MainNavBar } from "@/components/navigation";
 import { BrandingFooter } from "@/components/branding-footer";
-import { Link } from "wouter";
 
-export default function ContactReaching() {
+export default function Reaching() {
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col w-full">
-      <div className="w-full shadow-sm bg-white">
-        <div className="max-w-screen-xl mx-auto">
-          <NavigationHeader currentSection="contact" onNavigate={() => {}} />
-        </div>
+    <div className="flex flex-col min-h-screen w-full bg-neutral-light-gray">
+      <NavigationHeader currentSection="contact" onNavigate={() => {}} />
+      <div className="w-full" style={{ position: 'relative', zIndex: 10 }}>
+        <MainNavBar />
       </div>
-      <div className="w-full bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-screen-xl mx-auto">
-          <MainNavBar />
+      <main className="flex-1 flex flex-col w-full bg-neutral-light-gray">
+        <div className="w-full flex justify-center px-4 md:px-16 py-10 max-w-3xl mx-auto">
+          <div className="flex-1 bg-sky-100 rounded-2xl shadow-lg p-6 min-h-[220px] flex flex-col border border-sky-200 relative max-w-xl mx-auto">
+            <div className="flex items-center mb-4">
+              <span className="text-sky-500 mr-2" style={{ fontSize: 28 }}>📍</span>
+              <h2 className="text-xl font-semibold text-sky-800 flex-1">Reaching</h2>
+            </div>
+            <div className="flex-1 text-sky-900 text-sm">
+              Campus: Indian Institute of Science, Bangalore<br/>
+              Department: Aerospace Engineering<br/>
+              Directions: Enter through the main gate, follow signs to Aerospace Engineering, CINT Lab is on the 2nd floor.
+            </div>
+          </div>
         </div>
-      </div>
-      <main className="flex-1 w-full max-w-screen-xl mx-auto py-12 px-4">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4">Reaching</h1>
-        <p>This is the Reaching page.</p>
       </main>
-      <footer className="w-full bg-gray-900 text-white mt-auto">
-        <div className="max-w-screen-xl mx-auto">
+      <footer className="flex-none w-full bg-neutral-light-gray text-neutral-dark-gray z-10 p-0 m-0">
+        <div className="w-full p-0 m-0">
           <BrandingFooter />
         </div>
       </footer>

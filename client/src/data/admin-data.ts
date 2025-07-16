@@ -29,7 +29,7 @@ export interface AdminNewsItem {
   externalLink?: string;
 }
 
-// Team Members Data - Easily editable by admin
+// Team Members Data - Real data for CINT Lab
 export const adminTeamMembers: AdminTeamMember[] = [
   {
     id: "omkar",
@@ -37,72 +37,17 @@ export const adminTeamMembers: AdminTeamMember[] = [
     title: "Chief Research Scientist",
     specialization: "Computational Intelligence, UAV Systems, Biomechanics",
     category: "faculty",
-    image: "https://aero.iisc.ac.in/wp-content/uploads/elementor/thumbs/SN-Omkar-qtlqf0ienj915ldm6bcsijyq3rkucv7pmu385w70rk.jpg",
+    image: "/sn omkar.jpg",
     email: "omkar@iisc.ac.in",
     linkedin: "https://in.linkedin.com/in/dr-s-n-omkar-803550270",
     researchgate: "https://www.researchgate.net/profile/Omkar-S-N",
     isActive: true,
     joinDate: "2000-01-01",
-    bio: "Leading researcher in computational intelligence and aerospace applications."
-  },
-  {
-    id: "faculty_1",
-    name: "Dr. Research Collaborator",
-    title: "Associate Professor",
-    specialization: "Machine Learning Applications",
-    category: "faculty",
-    image: "https://via.placeholder.com/150",
-    email: "collaborator@iisc.ac.in",
-    isActive: true,
-    joinDate: "2015-08-01"
-  },
-  {
-    id: "phd_1",
-    name: "PhD Student 1",
-    title: "Doctoral Researcher",
-    specialization: "Computer Vision and UAV Systems",
-    category: "phd",
-    image: "https://via.placeholder.com/150",
-    email: "phd1@iisc.ac.in",
-    isActive: true,
-    joinDate: "2022-08-01"
-  },
-  {
-    id: "phd_2",
-    name: "PhD Student 2",
-    title: "Doctoral Researcher",
-    specialization: "Satellite Image Processing",
-    category: "phd",
-    image: "https://via.placeholder.com/150",
-    email: "phd2@iisc.ac.in",
-    isActive: true,
-    joinDate: "2021-08-01"
-  },
-  {
-    id: "mtech_1",
-    name: "M.Tech Student 1",
-    title: "Master's Researcher",
-    specialization: "Biomechanics Analysis",
-    category: "masters",
-    image: "https://via.placeholder.com/150",
-    email: "mtech1@iisc.ac.in",
-    isActive: true,
-    joinDate: "2024-08-01"
-  },
-  {
-    id: "alumni_1",
-    name: "Dr. Alumni Researcher",
-    title: "Former PhD Student",
-    specialization: "Now at Google Research",
-    category: "alumni",
-    image: "https://via.placeholder.com/150",
-    email: "alumni1@gmail.com",
-    isActive: true,
-    joinDate: "2018-08-01"
+    bio: "Leading researcher in computational intelligence and aerospace applications. Dr. S.N. Omkar is a Chief Research Scientist in the Guidance & Control area of the Department of Aerospace Engineering at Indian Institute of Science, Bangalore. He leads three specialized research laboratories: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab."
   }
 ];
 
-// News Items Data - Easily editable by admin
+// News Items Data - Real data for CINT Lab
 export const adminNewsItems: AdminNewsItem[] = [
   {
     id: "news_1",
@@ -117,44 +62,21 @@ export const adminNewsItems: AdminNewsItem[] = [
   },
   {
     id: "news_2",
-    title: "New Industry Collaboration Announced",
-    summary: "Partnership with leading aerospace company for advanced UAV technology development",
-    content: "The Computational Intelligence Laboratory has entered into a strategic partnership for developing next-generation UAV systems.",
-    date: "2024-11-28",
-    type: "collaboration",
-    isPublished: true
-  },
-  {
-    id: "news_3",
-    title: "Research Paper Accepted at IEEE Conference",
-    summary: "Latest work on satellite image processing accepted for presentation at international conference",
-    date: "2024-11-15",
-    type: "publication",
-    isPublished: true
-  },
-  {
-    id: "news_4",
-    title: "Lab Receives Equipment Grant",
-    summary: "New funding secured for advanced computational infrastructure upgrade",
-    date: "2024-10-20",
-    type: "award",
-    isPublished: true
-  },
-  {
-    id: "news_5",
     title: "TCS Research Advisory Role",
     summary: "Dr. Omkar continues strategic advisory role with Tata Consultancy Services",
     date: "2024-09-30",
     type: "collaboration",
-    isPublished: true
+    isPublished: true,
+    author: "Dr. S.N. Omkar"
   },
   {
-    id: "news_6",
+    id: "news_3",
     title: "Citation Milestone Achieved",
     summary: "Laboratory's research publications cross 4,200 citations mark",
     date: "2024-09-10",
     type: "achievement",
-    isPublished: true
+    isPublished: true,
+    author: "Dr. S.N. Omkar"
   }
 ];
 

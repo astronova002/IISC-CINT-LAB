@@ -1,411 +1,445 @@
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Professional Educational Organization Color Scheme */
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.5rem;
+  /* Primary Colors - Deep Blue and Navy */
+  --primary-navy: #1a365d;
+  --primary-blue: #2c5282;
+  --primary-light-blue: #4299e1;
+  --primary-dark-gray: #393E46;
   
-  /* Custom academic colors */
-  --academic-brown: hsl(20, 69%, 33%);
-  --forest-green: hsl(120, 33%, 25%);
-  --sandy-brown: hsl(33, 57%, 65%);
-  --academic-beige: hsl(60, 29%, 94%);
-  --success-green: hsl(168, 76%, 36%);
-  --error-red: hsl(6, 78%, 57%);
+  /* Secondary Colors - Gold and Warm Gray */
+  --secondary-gold: #d69e2e;
+  --secondary-light-gold: #f6e05e;
+  --secondary-warm-gray: #4a5568;
+  
+  /* Neutral Colors */
+  --neutral-white: #ffffff;
+  --neutral-light-gray: #f7fafc;
+  --neutral-gray: #e2e8f0;
+  --neutral-dark-gray: #2d3748;
+  
+  /* Accent Colors */
+  --accent-teal: #319795;
+  --accent-emerald: #38a169;
+  --accent-red: #e53e3e;
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7fafc;
+  --bg-tertiary: #edf2f7;
+  --bg-dark: #1a202c;
 }
 
-.dark {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
-  --popover: hsl(240, 10%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 3.7%, 15.9%);
-  --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(240, 3.7%, 15.9%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(240, 3.7%, 15.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
-  --radius: 0.5rem;
+/* Professional Font Classes */
+.font-display {
+  font-family: 'Playfair Display', serif;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
 
-  html, body {
-    @apply font-sans antialiased bg-background text-foreground;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
+.font-academic {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
-  #root {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+/* Professional Color Classes */
+.text-primary-navy { color: var(--primary-navy); }
+.text-primary-blue { color: var(--primary-blue); }
+.text-primary-light-blue { color: var(--primary-light-blue); }
+.text-secondary-gold { color: var(--secondary-gold); }
+.text-secondary-light-gold { color: var(--secondary-light-gold); }
+.text-secondary-warm-gray { color: var(--secondary-warm-gray); }
+.text-neutral-white { color: var(--neutral-white); }
+.text-neutral-light-gray { color: var(--neutral-light-gray); }
+.text-neutral-gray { color: var(--neutral-gray); }
+.text-neutral-dark-gray { color: var(--neutral-dark-gray); }
+.text-accent-teal { color: var(--accent-teal); }
+.text-accent-emerald { color: var(--accent-emerald); }
+.text-accent-red { color: var(--accent-red); }
 
-  /* Ensure full width layout */
-  .w-full {
-    width: 100% !important;
-  }
+.bg-primary-navy { background-color: var(--primary-navy); }
+.bg-primary-blue { background-color: var(--primary-blue); }
+.bg-primary-light-blue { background-color: var(--primary-light-blue); }
+.bg-secondary-gold { background-color: var(--secondary-gold); }
+.bg-secondary-light-gold { background-color: var(--secondary-light-gold); }
+.bg-secondary-warm-gray { background-color: var(--secondary-warm-gray); }
+.bg-neutral-white { background-color: var(--neutral-white); }
+.bg-neutral-light-gray { background-color: var(--neutral-light-gray); }
+.bg-neutral-gray { background-color: var(--neutral-gray); }
+.bg-neutral-dark-gray { background-color: var(--neutral-dark-gray); }
+.bg-accent-teal { background-color: var(--accent-teal); }
+.bg-accent-emerald { background-color: var(--accent-emerald); }
+.bg-accent-red { background-color: var(--accent-red); }
 
-  /* Remove any horizontal overflow */
-  body {
-    overflow-x: hidden;
-  }
+/* Professional Gradients */
+.bg-gradient-professional {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+}
 
-  /* Ensure containers stretch to full width */
-  .container, .max-w-7xl, .max-w-6xl, .max-w-4xl, .max-w-2xl {
-    max-width: none !important;
-    width: 100% !important;
-  }
+.bg-gradient-academic {
+  background: linear-gradient(135deg, var(--neutral-light-gray) 0%, var(--neutral-white) 100%);
+}
 
-  /* Line clamp utilities */
-  .line-clamp-1 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
+.bg-gradient-warm {
+  background: linear-gradient(135deg, var(--secondary-gold) 0%, var(--secondary-light-gold) 100%);
+}
 
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
+/* Professional Button Styles */
+.btn-primary {
+  background-color: var(--primary-dark-gray);
+  color: #948979;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s;
+}
 
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
+.btn-primary:hover {
+  background-color: #22252a;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
 
-  /* Custom shadow for hover effect */
-  .shadow-3xl {
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  }
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-navy);
+  color: var(--primary-navy);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s;
+}
 
-  /* Continuous scroll animation */
-  @keyframes scroll {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
+.btn-secondary:hover {
+  background-color: var(--primary-navy);
+  color: var(--neutral-white);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
 
-  /* Scroll up animation (from footer to header) */
-  @keyframes scroll-up {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-200%);
-    }
-  }
+.btn-accent {
+  background-color: var(--secondary-gold);
+  color: var(--neutral-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s;
+}
 
-  .animate-scroll {
-    animation: scroll linear infinite;
-  }
+.btn-accent:hover {
+  background-color: var(--secondary-light-gold);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
 
-  .animate-scroll-up {
-    animation: scroll-up linear infinite;
-  }
+/* Professional Card Styles */
+.card-professional {
+  background-color: var(--neutral-white);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--neutral-gray);
+  transition: all 0.3s;
+}
 
-  .animate-pause {
-    animation-play-state: paused;
-  }
+.card-professional:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
 
-  /* Carousel header styles */
-  .carousel-header {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+.card-academic {
+  background-color: var(--neutral-light-gray);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--neutral-gray);
+  transition: all 0.3s;
+}
 
-  .carousel-title {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.card-academic:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Professional Typography */
+.heading-primary {
+  font-family: 'Playfair Display', serif;
     font-weight: 700;
-    letter-spacing: 0.5px;
-  }
+  color: var(--primary-navy);
+}
 
-  .carousel-divider {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-    height: 2px;
-    border-radius: 1px;
-    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+.heading-secondary {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: var(--secondary-warm-gray);
+}
+
+.text-body {
+  font-family: 'Inter', sans-serif;
+  color: var(--neutral-dark-gray);
+  line-height: 1.625;
+}
+
+.text-academic {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--secondary-warm-gray);
+  line-height: 1.625;
+}
+
+/* 3D Canvas Optimizations */
+canvas {
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+/* Device-specific optimizations */
+@media (max-width: 768px) {
+  /* Mobile optimizations */
+  canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Reduce motion for better performance */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-@layer utilities {
-  .horizontal-scroll {
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* Tablet optimizations */
+  canvas {
+    image-rendering: auto;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  canvas {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Low-end device optimizations */
+@media (max-width: 480px) {
+  /* Further reduce animations for very small screens */
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce {
+    animation: none !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices */
+  .hover\:scale-105:hover {
+    transform: none;
   }
   
-  .section-snap {
-    scroll-snap-align: start;
+  .hover\:shadow-lg:hover {
+    box-shadow: none;
+  }
+}
+
+/* Performance optimizations for 3D rendering */
+.three-canvas-container {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Loading states */
+.model-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus indicators for better accessibility */
+*:focus {
+  outline: 2px solid var(--primary-navy);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-navy: #000000;
+    --primary-blue: #000000;
+    --secondary-gold: #000000;
+    --neutral-white: #ffffff;
+    --neutral-dark-gray: #000000;
+  }
+}
+
+/* Print styles */
+@media print {
+  canvas {
+    display: none !important;
   }
   
-  .academic-brown {
-    color: var(--academic-brown);
+  .three-canvas-container {
+    display: none !important;
   }
-  
-  .bg-academic-brown {
-    background-color: var(--academic-brown);
+}
+
+/* Custom Animations for Carousels */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  
-  .forest-green {
-    color: var(--forest-green);
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .bg-forest-green {
-    background-color: var(--forest-green);
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
   }
-  
-  .sandy-brown {
-    color: var(--sandy-brown);
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .bg-sandy-brown {
-    background-color: var(--sandy-brown);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .academic-beige {
-    color: var(--academic-beige);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .bg-academic-beige {
-    background-color: var(--academic-beige);
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  @media (min-width: 768px) {
-    .horizontal-container {
-      display: flex;
-      overflow-x: auto;
-      overflow-y: hidden;
-      height: 100vh;
-    }
-    .horizontal-section {
-      min-width: 100vw;
-      flex-shrink: 0;
-    }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  @media (max-width: 767px) {
-    .horizontal-container {
-      display: block;
-      overflow: visible;
-      height: auto;
-    }
-    .horizontal-section {
-      min-width: 100%;
-      min-height: 100vh;
-    }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
   }
-  
-  .nav-indicator {
-    transition: all 0.3s ease;
+  100% {
+    background-position: 200% 0;
   }
-  .nav-indicator.active {
-    background-color: var(--academic-brown);
-    transform: scale(1.2);
+}
+
+/* Animation Classes */
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Pulse Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
   }
-  
-  /* Aircraft Engine Animation Styles */
-  .bg-gradient-radial {
-    background: radial-gradient(circle, var(--tw-gradient-stops));
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
   }
-  
-  .engine-particle {
-    animation: particle-float 3s ease-in-out infinite;
-  }
-  
-  @keyframes particle-float {
-    0%, 100% {
-      transform: translateY(0px) scale(1);
-      opacity: 0.6;
-    }
-    50% {
-      transform: translateY(-20px) scale(1.2);
-      opacity: 1;
-    }
-  }
-  
-  /* Engine glow effects */
-  .engine-glow {
-    box-shadow: 
-      0 0 20px rgba(59, 130, 246, 0.3),
-      0 0 40px rgba(59, 130, 246, 0.2),
-      0 0 60px rgba(59, 130, 246, 0.1);
-  }
-  
-  /* Cursor trail effect */
-  .cursor-trail {
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      rgba(59, 130, 246, 0.8) 50%, 
-      transparent 100%);
-    filter: blur(1px);
-  }
-  
-  /* Aircraft Engine Animations */
-  @keyframes cursor-move {
-    0%, 100% {
-      transform: translateY(-50%) translateX(-100%);
-    }
-    50% {
-      transform: translateY(-50%) translateX(100%);
-    }
-  }
-  
-  @keyframes engine-rotate {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(360deg);
-    }
-  }
-  
-  @keyframes fan-spin {
-    from {
-      transform: rotateZ(0deg);
-    }
-    to {
-      transform: rotateZ(360deg);
-    }
-  }
-  
-  @keyframes compressor-spin {
-    from {
-      transform: rotateZ(0deg);
-    }
-    to {
-      transform: rotateZ(-360deg);
-    }
-  }
-  
-  @keyframes turbine-spin {
-    from {
-      transform: rotateZ(0deg);
-    }
-    to {
-      transform: rotateZ(360deg);
-    }
-  }
-  
-  @keyframes intake-pulse {
-    0%, 100% {
-      transform: translateX(-50%) scaleY(1);
-    }
-    50% {
-      transform: translateX(-50%) scaleY(1.2);
-    }
-  }
-  
-  @keyframes exhaust-pulse {
-    0%, 100% {
-      transform: translateX(-50%) scaleX(1);
-    }
-    50% {
-      transform: translateX(-50%) scaleX(1.3);
-    }
-  }
-  
-  @keyframes combustion-glow {
-    0%, 100% {
-      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-    }
-    50% {
-      box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
-    }
-  }
-  
-  @keyframes fuel-pulse {
-    0%, 100% {
-      opacity: 0.3;
-      transform: scale(0.8);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-  }
-  
-  /* Animation classes */
-  .animate-cursor-move {
-    animation: cursor-move 6s ease-in-out infinite;
-  }
-  
-  .animate-engine-rotate {
-    animation: engine-rotate 8s linear infinite;
-  }
-  
-  .animate-fan-spin {
-    animation: fan-spin 2s linear infinite;
-  }
-  
-  .animate-compressor-spin {
-    animation: compressor-spin 3s linear infinite;
-  }
-  
-  .animate-turbine-spin {
-    animation: turbine-spin 1.5s linear infinite;
-  }
-  
-  .animate-intake-pulse {
-    animation: intake-pulse 3s ease-in-out infinite;
-  }
-  
-  .animate-exhaust-pulse {
-    animation: exhaust-pulse 4s ease-in-out infinite;
-  }
-  
-  .animate-combustion-glow {
-    animation: combustion-glow 2s ease-in-out infinite;
-  }
-  
-  .animate-fuel-pulse {
-    animation: fuel-pulse 1s ease-in-out infinite;
-  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.input {
+  @apply border border-sky-200 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-sky-200 transition;
+  width: 100%;
+  font-size: 1rem;
+  background: #f8fafc;
+  margin-bottom: 0.25rem;
 }

@@ -95,14 +95,37 @@ export function HomeSection({ onNavigate }: HomeSectionProps) {
       <div className="bg-black/90 backdrop-blur-sm rounded-lg p-6 border border-white/20">
         <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Button 
-            className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
-            variant="outline" 
-            size="sm" 
-            onClick={() => onNavigate("team")}
-          >
-            Meet the Team
-          </Button>
+          {/* Team segmented quick links */}
+          <div className="col-span-2 md:col-span-1 flex flex-col items-center">
+            <div className="mb-2 text-white font-semibold">Meet the Team</div>
+            <div className="flex space-x-2">
+              <Button 
+                className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+                variant="outline" 
+                size="sm" 
+                onClick={() => onNavigate("interns")}
+              >
+                Interns
+              </Button>
+              <Button 
+                className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+                variant="outline" 
+                size="sm" 
+                onClick={() => onNavigate("researchers")}
+              >
+                Researchers
+              </Button>
+              <Button 
+                className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
+                variant="outline" 
+                size="sm" 
+                onClick={() => onNavigate("alumni")}
+              >
+                Alumni
+              </Button>
+            </div>
+          </div>
+          {/* Other quick links */}
           <Button 
             className="bg-black/80 text-white border-white/30 hover:bg-black/90 hover:border-white/50" 
             variant="outline" 

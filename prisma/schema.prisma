@@ -24,10 +24,15 @@ model User {
 model News {
   id          Int      @id @default(autoincrement())
   title       String
-  content     String
+  summary     String?
+  content     String?
+  imageUrl    String?
+  type        String   @default("news") // award, news, collaboration, achievement, publication
+  isPublished Boolean  @default(true)
   publishedAt DateTime @default(now())
   author      User?    @relation(fields: [authorId], references: [id])
   authorId    Int?
+  externalLink String?
 }
 
 model TeamMember {
@@ -44,6 +49,10 @@ model ResearchProject {
   description String?
   startDate   DateTime?
   endDate     DateTime?
+  status      String   @default("ongoing")
+  tags        String[]
+  imageUrl    String?
+  isActive    Boolean  @default(true)
 }
 
 model Publication {
@@ -53,4 +62,40 @@ model Publication {
   journal String?
   year    Int?
   link    String?
+}
+
+model Feedback {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model InternshipApplication {
+  id                Int      @id @default(autoincrement())
+  fullName          String
+  email             String
+  phone             String
+  dateOfBirth       DateTime
+  gender            String?  // Optional
+  profilePhotoUrl   String?  // Optional
+  institution       String
+  degreeProgram     String
+  major             String
+  yearOfStudy       String
+  cgpa              String
+  transcriptUrl     String
+  duration          String
+  startDate         DateTime
+  areasOfInterest   String
+  appliedBefore     Boolean
+  resumeUrl         String
+  coverLetter       String?
+  skills            String
+  experience        String
+  github            String?  // Optional
+  linkedin          String?  // Optional
+  publications      String?  // Optional
+  createdAt         DateTime @default(now())
 }

@@ -44,7 +44,9 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  icon: string;
+  image: string; // Added image field
+  icon?: string;
+  status: 'ongoing' | 'completed'; // Added status field
 }
 
 export const chiefScientist = {
@@ -54,7 +56,7 @@ export const chiefScientist = {
   bio: "Dr. S.N. Omkar is a Chief Research Scientist in the Guidance & Control area of the Department of Aerospace Engineering at Indian Institute of Science, Bangalore. He leads three specialized research laboratories: Computational Intelligence Lab, Unmanned Aerial Vehicles Lab, and Biomechanics Lab.",
   extendedBio: "With over 164+ research publications and 4,193+ citations, Dr. Omkar has mentored 200+ interns and introduced 3 courses at IISc. He serves as Research Advisor to Tata Consultancy Services and holds memberships in the Indian Society for Remote Sensing, American Helicopter Society, and is a Founder Member of the Automatic Control and Dynamic Optimization Society (ACDOS). His pioneering work includes violence detection using drone surveillance, satellite image processing for urban growth analysis, and biomechanics applications in aerospace. He was featured by BBC for his work on recognizing violence in crowds using drone-computing.",
   email: "omkar@iisc.ac.in",
-  image: "https://aero.iisc.ac.in/wp-content/uploads/elementor/thumbs/SN-Omkar-qtlqf0ienj915ldm6bcsijyq3rkucv7pmu385w70rk.jpg",
+  image: "/sn omkar.jpg",
   researchInterests: [
     "Helicopter Dynamics",
     "Satellite Image Processing", 
@@ -66,78 +68,16 @@ export const chiefScientist = {
   ]
 };
 
+// Real team members data - currently only Dr. Omkar
 export const teamMembers: TeamMember[] = [
   {
-    id: "1",
-    name: "Dr. J. Senthilnath",
-    title: "Research Collaborator",
-    specialization: "Satellite Image Processing & Machine Learning",
+    id: "omkar",
+    name: "Dr. S. N. Omkar",
+    title: "Chief Research Scientist",
+    specialization: "Computational Intelligence, UAV Systems, Biomechanics",
     category: "faculty",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "senthilnath@iisc.ac.in"
-  },
-  {
-    id: "2",
-    name: "Dr. V. Mani",
-    title: "Research Collaborator",
-    specialization: "Computer Vision & Deep Learning",
-    category: "faculty",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "vmani@iisc.ac.in"
-  },
-  {
-    id: "3",
-    name: "Dr. P.G. Diwakar",
-    title: "Research Collaborator",
-    specialization: "UAV Systems & Biomechanics",
-    category: "faculty",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "pgdiwakar@iisc.ac.in"
-  },
-  {
-    id: "4",
-    name: "Current PhD Student",
-    title: "PhD Student",
-    specialization: "Drone Surveillance Systems",
-    category: "phd",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "phd.student@iisc.ac.in"
-  },
-  {
-    id: "5",
-    name: "Current PhD Student",
-    title: "PhD Student",
-    specialization: "Satellite Image Analysis",
-    category: "phd",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "phd.student2@iisc.ac.in"
-  },
-  {
-    id: "6",
-    name: "Current M.Tech Student",
-    title: "M.Tech Student",
-    specialization: "Biomechanics Applications",
-    category: "masters",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "mtech.student@iisc.ac.in"
-  },
-  {
-    id: "7",
-    name: "Alumni (Representative)",
-    title: "Former PhD Student",
-    specialization: "Now in Industry/Academia",
-    category: "alumni",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "alumni@companies.com"
-  },
-  {
-    id: "8",
-    name: "Alumni (Representative)",
-    title: "Former Research Scholar",
-    specialization: "Now in Research Organizations",
-    category: "alumni",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    email: "alumni2@organizations.com"
+    image: "/sn omkar.jpg",
+    email: "omkar@iisc.ac.in"
   }
 ];
 
@@ -195,28 +135,36 @@ export const projects: Project[] = [
     title: "Violence Detection Using Drone Surveillance",
     description: "Real-time drone surveillance systems for identifying violent individuals in public areas using deep learning networks. Featured by BBC for crowd violence recognition.",
     tags: ["UAV", "Deep Learning", "Surveillance"],
-    icon: "project-diagram"
+    image: "/building-placeholder.jpg",
+    icon: "project-diagram",
+    status: 'ongoing'
   },
   {
     id: "2",
     title: "Satellite Image Processing for Urban Growth",
-    description: "Multi-temporal satellite image analysis for Bangalore region using Landsat data over 39-year periods, automated land cover mapping and crop analysis using hyperspectral data.",
+    description: "Satellite image analysis for urban growth and planning.",
     tags: ["Remote Sensing", "Machine Learning", "Urban Planning"],
-    icon: "microchip"
+    image: "/building-placeholder.jpg",
+    icon: "microchip",
+    status: 'ongoing'
   },
   {
     id: "3",
     title: "Autonomous UAV Navigation Systems",
     description: "High-speed autonomous UAV navigation including Road Identification, Following & Tracking (RIFT) systems, obstacle avoidance in forest environments using nature-inspired optimization.",
     tags: ["UAV", "Autonomous Navigation", "Optimization"],
-    icon: "dna"
+    image: "/building-placeholder.jpg",
+    icon: "dna",
+    status: 'completed'
   },
   {
     id: "4",
     title: "Biomechanics for Aerospace Applications",
     description: "Time-frequency analysis of biomechanical signals during rhythmic exercises, sports analytics through keypoint detection, and yoga research applications in aerospace human factors.",
     tags: ["Biomechanics", "Aerospace", "Sports Analytics"],
-    icon: "leaf"
+    image: "/building-placeholder.jpg",
+    icon: "leaf",
+    status: 'ongoing'
   }
 ];
 
@@ -248,26 +196,10 @@ export const news: NewsItem[] = [
   {
     id: "4",
     title: "Collaborative Research with TCS and Industry Partners",
-    summary: "Dr. Omkar serves as Research Advisor to Tata Consultancy Services, fostering industry-academia collaboration in UAV technology and satellite image processing applications.",
-    date: "March 5, 2024",
+    summary: "Strategic partnerships with Tata Consultancy Services and other industry leaders for advanced UAV technology development and applications.",
+    date: "March 15, 2024",
     type: "collaboration",
-    image: "/tcs-collaboration.jpg"
-  },
-  {
-    id: "5",
-    title: "CINT Lab Wins Best Research Award 2024",
-    summary: "The Computational Intelligence Laboratory has been recognized with the prestigious Best Research Award for innovative contributions in UAV technology and satellite image processing.",
-    date: "February 20, 2024",
-    type: "award",
-    image: "/research-award.jpg"
-  },
-  {
-    id: "6",
-    title: "New UAV Testing Facility Inaugurated",
-    summary: "State-of-the-art UAV testing facility opened at IISc, featuring advanced flight simulators and autonomous navigation testing equipment for cutting-edge research.",
-    date: "January 15, 2024",
-    type: "achievement",
-    image: "/uav-facility.jpg"
+    image: "/collaboration.jpg"
   }
 ];
 

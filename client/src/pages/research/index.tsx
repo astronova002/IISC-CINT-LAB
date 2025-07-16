@@ -11,11 +11,10 @@ export default function Research() {
         <MainNavBar />
       </div>
       <main className="flex-1 w-full py-12 px-4">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4">Research</h1>
+        <h1 className="text-3xl font-bold text-blue-900 mb-4 font-display">Research</h1>
         <nav aria-label="Research Subpages" className="mb-8">
           <ul className="flex flex-wrap gap-4">
-            <li><Link href="/research/streams" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Streams</Link></li>
-            <li><Link href="/research/special-interests" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Special Interests</Link></li>
+            <li><Link href="/research/projects" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Projects</Link></li>
             <li><Link href="/research/facilities" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Facilities</Link></li>
             <li><Link href="/research/reports" className="nav-btn px-4 py-2 rounded font-medium text-white bg-blue-900 hover:bg-white hover:text-blue-900 hover:underline transition">Reports</Link></li>
           </ul>

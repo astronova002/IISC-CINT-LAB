@@ -64,7 +64,7 @@ export default function LabCarousel() {
         {slides.map((slide, idx) => (
           <button
             key={slide.key}
-            className={`w-3 h-3 rounded-full border-2 border-primary ${goToSlide === idx ? 'bg-primary' : 'bg-white'}`}
+            className={`w-3 h-3 rounded-full border-2 border-primary ${goToSlide === idx ? 'bg-[#393E46]' : 'bg-white'}`}
             onClick={() => setGoToSlide(idx)}
             aria-label={`Go to slide ${idx + 1}`}
           />

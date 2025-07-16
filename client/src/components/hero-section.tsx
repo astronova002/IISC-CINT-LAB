@@ -7,26 +7,17 @@ interface HeroSectionProps {
 export function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
     <section 
-      className="horizontal-section section-snap bg-gradient-to-br from-academic-beige to-white flex items-center justify-center" 
+      className="horizontal-section section-snap bg-gradient-academic flex items-center justify-center min-h-screen" 
       data-section="0" 
       aria-labelledby="hero-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h1 id="hero-heading" className="text-4xl md:text-6xl font-bold academic-brown mb-6 font-serif">
-              Dr. S.N. Omkar's Labs
-            </h1>
-            <p className="text-xl md:text-2xl forest-green mb-4 font-serif">
-              Computational Intelligence | UAV | Biomechanics
-            </p>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Leading research in autonomous UAVs, satellite image processing, and biomechanics applications at Department of Aerospace Engineering, Indian Institute of Science, Bangalore
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={() => onNavigate(3)}
-                className="bg-academic-brown text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105"
+                className="btn-primary"
                 aria-label="View our research"
               >
                 View Our Research
@@ -34,7 +25,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               <Button 
                 variant="outline"
                 onClick={() => onNavigate(4)}
-                className="border-2 border-academic-brown academic-brown px-8 py-3 rounded-lg hover:bg-academic-brown hover:text-white transition-all"
+                className="btn-secondary"
                 aria-label="Meet our team"
               >
                 Meet Our Team
