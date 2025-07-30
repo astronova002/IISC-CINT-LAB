@@ -8,7 +8,7 @@ export default function NewsSection() {
   useEffect(() => {
     setLoading(true);
     setError("");
-    fetch('/api/news')
+    fetch('http://127.0.0.1:8000/api/news/?is_published=true')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch news');
         return res.json();
@@ -29,7 +29,7 @@ export default function NewsSection() {
           <li key={item.id} className="bg-white rounded-xl shadow p-4">
             <div className="font-semibold text-lg text-primary">{item.title}</div>
             <div className="text-gray-800 whitespace-pre-line mt-1">{item.content}</div>
-            <div className="text-xs text-gray-500 mt-2">{new Date(item.publishedAt).toLocaleString()}</div>
+            <div className="text-xs text-gray-500 mt-2">{new Date(item.published_at).toLocaleString()}</div>
           </li>
         ))}
       </ul>

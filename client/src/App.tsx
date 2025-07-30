@@ -28,7 +28,7 @@ import ContactChiefScientist from "@/pages/contact/chief-scientist.tsx";
 import ContactReaching from "@/pages/contact/reaching";
 import ContactContactInfo from "@/pages/contact/contact-info.tsx";
 import ContactFeedback from "@/pages/contact/feedback.tsx";
-import AdminDashboard from "@/pages/admin";
+import EngageWithLab from "@/pages/engage";
 
 function Router() {
   return (
@@ -54,7 +54,7 @@ function Router() {
       <Route path="/contact/reaching" component={ContactReaching} />
       <Route path="/contact/contact-info" component={ContactContactInfo} />
       <Route path="/contact/feedback" component={ContactFeedback} />
-      <Route path="/admin" component={AdminDashboard} />
+      <Route path="/engage" component={EngageWithLab} />
       <Route component={NotFound} />
     </Switch>
   );

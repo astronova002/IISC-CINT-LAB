@@ -1,154 +1,49 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Mail, ExternalLink, Users, GraduationCap } from "lucide-react";
-import { adminTeamMembers, getActiveTeamMembers } from "@/data/admin-data";
+import React, { useEffect, useState } from 'react';
 
-export function TeamSection() {
-  const facultyMembers = getActiveTeamMembers("faculty");
-  const phdStudents = getActiveTeamMembers("phd");
-  const masterStudents = getActiveTeamMembers("masters");
-  const alumni = getActiveTeamMembers("alumni");
-  const allStudents = [...phdStudents, ...masterStudents];
+function TeamList({ category, title }: { category: string, title: string }) {
+  const [members, setMembers] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  const TeamCard = ({ member, index }: { member: typeof adminTeamMembers[0], index: number }) => (
-    <Card key={index} className="hover:shadow-lg transition-shadow">
-      <CardContent className="p-4">
-        <div className="flex items-center space-x-4">
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-16 h-16 rounded-full object-cover"
-          />
-          <div className="flex-1">
-            <h3 className="font-semibold text-gray-900">{member.name}</h3>
-            <p className="text-sm text-gray-600">{member.title}</p>
-            <p className="text-xs text-gray-500">{member.specialization}</p>
-          </div>
-          <div className="flex space-x-2">
-            <Button size="sm" variant="outline" asChild>
-              <a href={`mailto:${member.email}`}>
-                <Mail className="h-4 w-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
+  useEffect(() => {
+    setLoading(true);
+    setError("");
+    fetch(`http://127.0.0.1:8000/api/team-members/?category=${category}`)
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch team members');
+        return res.json();
+      })
+      .then(setMembers)
+      .catch(err => setError(err.message))
+      .finally(() => setLoading(false));
+  }, [category]);
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Research Team</h2>
-        <p className="text-gray-600">Meet the researchers and collaborators</p>
-      </div>
+    <section className="w-full max-w-4xl mx-auto py-8 px-4">
+      <h2 className="text-2xl font-bold text-primary mb-4">{title}</h2>
+      {loading && <div>Loading...</div>}
+      {error && <div className="text-red-600">{error}</div>}
+      {!loading && !error && members.length === 0 && <div>No members found.</div>}
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {members.map(member => (
+          <li key={member.id} className="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+            <img src={member.image || '/building-placeholder.jpg'} alt={member.name} className="w-24 h-24 rounded-full object-cover mb-2" />
+            <div className="font-semibold text-lg text-primary">{member.name}</div>
+            <div className="text-gray-700 text-sm">{member.title}</div>
+            <div className="text-xs text-gray-500">{member.specialization}</div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
-      {/* Team Stats */}
-      <div className="grid grid-cols-3 gap-4">
-        <Card className="text-center">
-          <CardContent className="p-4">
-            <Users className="h-6 w-6 text-blue-500 mx-auto mb-2" />
-            <div className="text-xl font-bold">{facultyMembers.length}</div>
-            <div className="text-sm text-gray-600">Faculty</div>
-          </CardContent>
-        </Card>
-        <Card className="text-center">
-          <CardContent className="p-4">
-            <GraduationCap className="h-6 w-6 text-green-500 mx-auto mb-2" />
-            <div className="text-xl font-bold">{allStudents.length}</div>
-            <div className="text-sm text-gray-600">Students</div>
-          </CardContent>
-        </Card>
-        <Card className="text-center">
-          <CardContent className="p-4">
-            <Users className="h-6 w-6 text-purple-500 mx-auto mb-2" />
-            <div className="text-xl font-bold">{alumni.length}</div>
-            <div className="text-sm text-gray-600">Alumni</div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Faculty & Collaborators */}
-      <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <Users className="h-5 w-5 mr-2" />
-          Faculty & Research Collaborators
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {facultyMembers.map((member, index) => (
-            <TeamCard key={index} member={member} index={index} />
-          ))}
-        </div>
-      </div>
-
-      {/* Current Students */}
-      <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <GraduationCap className="h-5 w-5 mr-2" />
-          Current Students
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {allStudents.map((member, index) => (
-            <TeamCard key={index} member={member} index={index} />
-          ))}
-        </div>
-      </div>
-
-      {/* Alumni */}
-      <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <Users className="h-5 w-5 mr-2" />
-          Alumni Representatives
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {alumni.map((member, index) => (
-            <TeamCard key={index} member={member} index={index} />
-          ))}
-        </div>
-      </div>
-
-      {/* Research Opportunities */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Join Our Research Team</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <p className="text-sm text-gray-600">
-              The Computational Intelligence Laboratory offers research opportunities for:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-semibold mb-2">PhD Students</h4>
-                <div className="space-y-1 text-sm text-gray-600">
-                  <p>• Computational Intelligence</p>
-                  <p>• UAV Systems & Autonomous Navigation</p>
-                  <p>• Biomechanics Applications</p>
-                  <p>• Satellite Image Processing</p>
-                </div>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">M.Tech Students</h4>
-                <div className="space-y-1 text-sm text-gray-600">
-                  <p>• Machine Learning Applications</p>
-                  <p>• Drone Surveillance Systems</p>
-                  <p>• Image Processing Algorithms</p>
-                  <p>• Aerospace Engineering Projects</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-blue-900 mb-2">Research Impact:</h4>
-              <p className="text-sm text-blue-800">
-                Our team has trained 200+ interns and produced research with 4,193+ citations. 
-                Join us to work on cutting-edge projects that make a real-world impact.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+export function TeamSection() {
+  return (
+    <div>
+      <TeamList category="interns" title="Interns" />
+      <TeamList category="researchers" title="Researchers" />
+      <TeamList category="alumni" title="Alumni" />
     </div>
   );
 }
