@@ -2,14 +2,11 @@ import { useState, useEffect } from "react";
 import { NavigationHeader } from "@/components/navigation-header";
 import { BrandingFooter } from "@/components/branding-footer";
 import { MainNavBar } from "@/components/navigation";
-import LabCarousel from '@/components/lab-carousel';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { useLocation } from "wouter";
-import path from "path";
-import { fileURLToPath } from "url";
 import { getPublishedNews } from "@/data/admin-data";
 import { projects } from "@/data/lab-data";
-import { ArrowUpRight, Newspaper, FolderOpen, Megaphone } from "lucide-react";
+import { Newspaper, FolderOpen, Megaphone } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface CarouselNewsItem {
   id: number;
@@ -21,211 +18,188 @@ interface CarouselNewsItem {
 export default function Home() {
   const [carouselNews, setCarouselNews] = useState<CarouselNewsItem[]>([]);
   const [, navigate] = useLocation();
+
   useEffect(() => {
-    fetch('/api/news')
-      .then(res => res.json())
-      .then(data => {
-        // Only use news with type 'carousel' and a valid imageUrl
+    fetch("/api/news")
+      .then((res) => res.json())
+      .then((data) => {
         setCarouselNews(
-          (data || []).filter((item: any) => item.type === 'carousel' && item.imageUrl)
+          (data || []).filter(
+            (item: any) => item.type === "carousel" && item.imageUrl
+          )
         );
       });
   }, []);
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const sections = [
+    {
+      id: 1,
+      title: "Ongoing Projects",
+      icon: <FolderOpen className="text-blue-500 mr-2" size={26} />,
+      color: "blue",
+      content: (
+        <ul className="space-y-5">
+          {projects.slice(0, 4).map((project) => (
+            <li
+              key={project.id}
+              className="p-4 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-blue-50 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.02] duration-300 cursor-pointer flex gap-4 items-start"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-28 h-28 object-cover rounded-xl border border-gray-200 flex-shrink-0"
+              />
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1 flex items-center">
+                  <FolderOpen className="mr-2 text-blue-400" size={16} />
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 text-sm line-clamp-3">
+                  {project.description || "No description."}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ),
+      image: "/1d.jpg",
+    },
+    {
+      id: 2,
+      title: "Latest News",
+      icon: <Newspaper className="text-green-500 mr-2" size={26} />, 
+      color: "green",
+      content: (
+        <ul className="space-y-5">
+          {getPublishedNews(4).map((news) => (
+            <li
+              key={news.id}
+              className="p-4 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-green-50 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.02] duration-300 cursor-pointer"
+            >
+              <h3 className="font-semibold text-gray-800 flex items-center mb-1">
+                <Newspaper className="mr-2 text-green-400" size={16} />
+                {news.title}
+              </h3>
+              <p className="text-gray-600 text-sm line-clamp-3">{news.summary}</p>
+              <span className="text-xs text-gray-500 mt-2 block">{news.date}</span>
+            </li>
+          ))}
+        </ul>
+      ),
+      image: "/1e.jpg",
+    },
+    {
+      id: 3,
+      title: "Bulletins",
+      icon: <Megaphone className="text-purple-500 mr-2" size={26} />, 
+      color: "purple",
+      content: (
+        <ul className="space-y-5">
+          <li className="p-4 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-purple-50 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.02] duration-300 cursor-pointer">
+            <h3 className="font-semibold text-gray-800 flex items-center mb-1">
+              <Megaphone className="mr-2 text-purple-400" size={16} />
+              Semester break from Aug 1–15
+            </h3>
+            <p className="text-gray-600 text-sm">
+              All lab activities will be paused during this period.
+            </p>
+            <span className="text-xs text-gray-500 mt-2 block">July 2024</span>
+          </li>
+          <li className="p-4 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-purple-50 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 hover:scale-[1.02] duration-300 cursor-pointer">
+            <h3 className="font-semibold text-gray-800 flex items-center mb-1">
+              <Megaphone className="mr-2 text-purple-400" size={16} />
+              New safety protocols in effect
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Please review the updated safety guidelines on the lab portal.
+            </p>
+            <span className="text-xs text-gray-500 mt-2 block">July 2024</span>
+          </li>
+        </ul>
+      ),
+      image: "/1f.jpg",
+    },
+  ];
+
   return (
-    <div className="flex flex-col min-h-screen w-full bg-neutral-light-gray">
-      {/* Header and Navigation */}
+    <div className="flex flex-col min-h-screen w-full bg-gray-50">
+      {/* Header */}
       <NavigationHeader currentSection="home" onNavigate={() => {}} />
-      <div className="w-full" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="sticky top-0 z-20 shadow bg-white">
         <MainNavBar />
       </div>
-      {/* Full-width Image Movement Carousel - now below header/nav */}
-      <div className="w-full flex" style={{ minHeight: 450, background: '#22252a' }}>
-        <div className="relative w-full">
-          <Carousel opts={{ loop: true, align: 'center' }} className="w-full" style={{ height: 450 }}>
-            {/* Arrows above images, inside Carousel context */}
-            <div className="flex justify-between items-center absolute w-full top-0 left-0 z-30" style={{ height: 40, pointerEvents: 'none' }}>
-              <CarouselPrevious className="!static !left-0 !top-0 !-translate-y-0 text-3xl" style={{ fontSize: 32, color: '#948979', background: 'rgba(34,37,42,0.7)', border: 'none', pointerEvents: 'auto' }}>
-                &lt;
-              </CarouselPrevious>
-              <CarouselNext className="!static !right-0 !top-0 !-translate-y-0 text-3xl" style={{ fontSize: 32, color: '#948979', background: 'rgba(34,37,42,0.7)', border: 'none', pointerEvents: 'auto' }}>
-                &gt;
-              </CarouselNext>
+
+      {/* Main */}
+      <main className="flex-1 flex flex-col w-[1200hv] max-w-7xl mx-auto px-6 py-12 space-y-24">
+        {/* Full Width Half Screen Height Video */}
+         <h1 className="text-4xl font-bold text-gray-900 mb-16 text-center">
+          Welcome to the Research Lab Portal
+        </h1>
+      <div className="w-[800hv] h-[50vh] mb-12">
+  <img
+    src="1g.jpg"
+    alt="Intro"
+    className="w-full h-full object-cover rounded-2xl shadow-lg border border-gray-300"
+  />
+</div>
+
+       
+
+        {sections.map((section, idx) => (
+          <motion.div
+            key={section.id}
+            className={`flex flex-col md:flex-row items-center gap-10 ${
+              idx % 2 === 1 ? "md:flex-row-reverse" : ""
+            }`}
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {/* Content */}
+            <div className="flex-1 bg-white rounded-2xl shadow-xl border border-gray-200 p-8 hover:shadow-2xl transition duration-500">
+              <header className="flex items-center mb-6">
+                {section.icon}
+                <h2 className="text-2xl font-semibold text-gray-800">
+                  {section.title}
+                </h2>
+              </header>
+              {section.content}
             </div>
-            <CarouselContent>
-              {carouselNews.length === 0 ? (
-                <CarouselItem className="flex items-center justify-center">
-                  <div style={{ width: '100vw', height: '450px', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888', fontSize: 32 }}>
-                    No images to display
-                  </div>
-                </CarouselItem>
-              ) : (
-                carouselNews.map((item, idx) => (
-                  <CarouselItem key={item.id} className="flex items-center justify-center">
-                    <div
-                      style={{ position: 'relative', width: '100vw', height: '450px', cursor: 'pointer' }}
-                      onClick={() => navigate(`/news?id=${item.id}`)}
-                    >
-                      <img
-                        src={item.imageUrl}
-                        alt={item.title || `Home Slide ${idx + 1}`}
-                        style={{ width: '100vw', height: '450px', objectFit: 'cover', borderRadius: 0 }}
-                      />
-                      {item.summary && (
-                        <div style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          width: '100%',
-                          background: 'rgba(0,0,0,0.5)',
-                          color: '#fff',
-                          padding: '16px 32px',
-                          fontSize: 20,
-                          fontWeight: 500,
-                          letterSpacing: 0.2,
-                          textShadow: '0 2px 8px #000',
-                          borderBottomLeftRadius: 0,
-                          borderBottomRightRadius: 0
-                        }}>
-                          {item.summary}
-                        </div>
-                      )}
-                    </div>
-                  </CarouselItem>
-                ))
-              )}
-            </CarouselContent>
-          </Carousel>
-        </div>
-      </div>
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col w-full bg-neutral-light-gray">
-        {/* Three sky blue boxes below the carousel: Ongoing Projects, Latest News, Bulletins */}
-        <div className="w-full flex flex-col md:flex-row gap-6 px-4 md:px-16 py-10 max-w-7xl mx-auto">
-          {/* Ongoing Projects Box */}
-          <div className="flex-1 bg-sky-100 rounded-2xl shadow-lg p-6 min-h-[320px] flex flex-col border border-sky-200 relative">
-            <div className="flex items-center mb-4">
-              <FolderOpen className="text-sky-500 mr-2" size={28} />
-              <h2 className="text-2xl font-semibold text-sky-800 flex-1">Ongoing Projects</h2>
-              <button
-                className="ml-2 px-2 py-1 text-xs bg-sky-200 text-sky-700 rounded hover:bg-sky-300 transition"
-                onClick={() => navigate('/admin?tab=projects')}
-                title="Manage Projects"
-              >
-                Manage <ArrowUpRight size={14} className="inline ml-1" />
-              </button>
-            </div>
-            {/* Vertical slider for projects */}
-            <div className="flex-1 overflow-y-auto custom-scrollbar pr-2">
-              <ul className="space-y-4">
-                {projects.slice(0, 6).map((project) => (
-                  <li key={project.id} className="bg-white/80 rounded-lg p-3 shadow hover:shadow-md transition cursor-pointer border border-sky-200 hover:bg-sky-50 flex gap-4 items-start">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-20 h-20 object-cover rounded-xl border border-sky-100 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <div className="font-bold text-sky-700 text-lg mb-1 flex items-center">
-                        <FolderOpen className="mr-2 text-sky-400" size={18} />
-                        {project.title}
-                      </div>
-                      <div className="text-sky-900 text-sm mb-1">{project.description || 'No description.'}</div>
-                      <div className="flex flex-wrap gap-2 mt-1">
-                        {project.tags.map((tag, idx) => (
-                          <span key={idx} className="bg-sky-200 text-sky-700 px-2 py-0.5 rounded-full text-xs">{tag}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          {/* Latest News Box */}
-          <div className="flex-1 bg-sky-100 rounded-2xl shadow-lg p-6 min-h-[320px] flex flex-col border border-sky-200 relative">
-            <div className="flex items-center mb-4">
-              <Newspaper className="text-sky-500 mr-2" size={28} />
-              <h2 className="text-2xl font-semibold text-sky-800 flex-1">Latest News</h2>
-              <button
-                className="ml-2 px-2 py-1 text-xs bg-sky-200 text-sky-700 rounded hover:bg-sky-300 transition"
-                onClick={() => navigate('/admin?tab=news')}
-                title="Manage News"
-              >
-                Manage <ArrowUpRight size={14} className="inline ml-1" />
-              </button>
-            </div>
-            {/* Vertical slider for news */}
-            <div className="flex-1 overflow-y-auto custom-scrollbar pr-2">
-              <ul className="space-y-4">
-                {getPublishedNews(6).map((news) => (
-                  <li key={news.id} className="bg-white/80 rounded-lg p-3 shadow hover:shadow-md transition cursor-pointer border border-sky-200 hover:bg-sky-50">
-                    <div className="font-bold text-sky-700 text-lg mb-1 flex items-center">
-                      <Newspaper className="mr-2 text-sky-400" size={18} />
-                      {news.title}
-                    </div>
-                    <div className="text-sky-900 text-sm mb-1">{news.summary}</div>
-                    <div className="text-xs text-sky-600 mt-1">{news.date}</div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          {/* Bulletins Box */}
-          <div className="flex-1 bg-sky-100 rounded-2xl shadow-lg p-6 min-h-[320px] flex flex-col border border-sky-200 relative">
-            <div className="flex items-center mb-4">
-              <Megaphone className="text-sky-500 mr-2" size={28} />
-              <h2 className="text-2xl font-semibold text-sky-800 flex-1">Bulletins</h2>
-              <button
-                className="ml-2 px-2 py-1 text-xs bg-sky-200 text-sky-700 rounded hover:bg-sky-300 transition"
-                onClick={() => navigate('/admin?tab=bulletins')}
-                title="Manage Bulletins"
-              >
-                Manage <ArrowUpRight size={14} className="inline ml-1" />
-              </button>
-            </div>
-            {/* Vertical slider for bulletins (placeholder) */}
-            <div className="flex-1 overflow-y-auto custom-scrollbar pr-2">
-              <ul className="space-y-4">
-                <li className="bg-white/80 rounded-lg p-3 shadow hover:shadow-md transition cursor-pointer border border-sky-200 hover:bg-sky-50">
-                  <div className="font-bold text-sky-700 text-lg mb-1 flex items-center">
-                    <Megaphone className="mr-2 text-sky-400" size={18} />
-                    Semester break from Aug 1-15
-                  </div>
-                  <div className="text-sky-900 text-sm mb-1">All lab activities will be paused during this period.</div>
-                  <div className="text-xs text-sky-600 mt-1">July 2024</div>
-                </li>
-                <li className="bg-white/80 rounded-lg p-3 shadow hover:shadow-md transition cursor-pointer border border-sky-200 hover:bg-sky-50">
-                  <div className="font-bold text-sky-700 text-lg mb-1 flex items-center">
-                    <Megaphone className="mr-2 text-sky-400" size={18} />
-                    New safety protocols in effect
-                  </div>
-                  <div className="text-sky-900 text-sm mb-1">Please review the updated safety guidelines on the lab portal.</div>
-                  <div className="text-xs text-sky-600 mt-1">July 2024</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Smaller, stretched Footer */}
-      <footer className="flex-none w-full bg-neutral-light-gray text-neutral-dark-gray z-10 p-0 m-0">
-        <div className="w-full p-0 m-0">
+
+            {/* Image */}
+            <motion.img
+              src={section.image}
+              alt={section.title}
+              className="flex-1 w-full max-w-md rounded-2xl shadow-lg border border-gray-200 object-cover hover:scale-105 transition duration-500"
+              whileHover={{ scale: 1.05 }}
+            />
+          </motion.div>
+        ))}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 border-t border-gray-200 mt-12">
+        <div className="max-w-16xl mx-auto p-6">
           <BrandingFooter />
         </div>
       </footer>
     </div>
   );
 }
-
-/* Add this to your CSS (e.g., index.css) for custom-scrollbar if not present:
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-  background: #e0f2fe;
-  border-radius: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #bae6fd;
-  border-radius: 8px;
-}
-*/

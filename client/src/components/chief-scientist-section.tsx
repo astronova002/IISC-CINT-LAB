@@ -18,11 +18,12 @@ export function ChiefScientistSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <img 
-              src={chiefScientist.image}
+              src="/sn omkar.jpg"
               alt={`${chiefScientist.name} portrait in professional setting`}
               className="rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:mx-0 h-auto" 
             />
           </div>
+          
           
           <div className="space-y-6">
             <div>

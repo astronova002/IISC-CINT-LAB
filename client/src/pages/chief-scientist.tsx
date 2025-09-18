@@ -80,7 +80,6 @@ export default function ChiefScientist() {
             </div>
             <div className="flex items-center gap-2 mb-2 text-sky-800"><Mail size={16} /> omkar@iisc.ac.in</div>
             <div className="flex items-center gap-2 mb-2 text-sky-800"><MapPin size={16} /> Office: AE123</div>
-            <div className="flex items-center gap-2 mb-2 text-sky-800"><Phone size={16} /> +91 80 22932417</div>
           </div>
           {/* Education & Experience */}
           <div className="bg-white rounded-2xl shadow-md p-6 border border-sky-100 flex flex-col items-start transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-sky-300">

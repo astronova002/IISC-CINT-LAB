@@ -135,7 +135,7 @@ export const projects: Project[] = [
     title: "Violence Detection Using Drone Surveillance",
     description: "Real-time drone surveillance systems for identifying violent individuals in public areas using deep learning networks. Featured by BBC for crowd violence recognition.",
     tags: ["UAV", "Deep Learning", "Surveillance"],
-    image: "/building-placeholder.jpg",
+    image: "/1.jpg",
     icon: "project-diagram",
     status: 'ongoing'
   },
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     title: "Satellite Image Processing for Urban Growth",
     description: "Satellite image analysis for urban growth and planning.",
     tags: ["Remote Sensing", "Machine Learning", "Urban Planning"],
-    image: "/building-placeholder.jpg",
+    image: "/1a.jpg",
     icon: "microchip",
     status: 'ongoing'
   },
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     title: "Autonomous UAV Navigation Systems",
     description: "High-speed autonomous UAV navigation including Road Identification, Following & Tracking (RIFT) systems, obstacle avoidance in forest environments using nature-inspired optimization.",
     tags: ["UAV", "Autonomous Navigation", "Optimization"],
-    image: "/building-placeholder.jpg",
+    image: "/1b.jpg",
     icon: "dna",
     status: 'completed'
   },
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     title: "Biomechanics for Aerospace Applications",
     description: "Time-frequency analysis of biomechanical signals during rhythmic exercises, sports analytics through keypoint detection, and yoga research applications in aerospace human factors.",
     tags: ["Biomechanics", "Aerospace", "Sports Analytics"],
-    image: "/building-placeholder.jpg",
+    image: "/1c.jpg",
     icon: "leaf",
     status: 'ongoing'
   }

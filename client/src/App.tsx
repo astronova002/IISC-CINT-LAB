@@ -13,10 +13,6 @@ import AboutOpportunities from "@/pages/about/opportunities.tsx";
 // Chief Scientist
 import ChiefScientist from "@/pages/chief-scientist.tsx";
 // People and subpages
-import People from "@/pages/people/index";
-import PeopleInterns from "@/pages/people/interns.tsx";
-import PeopleResearchers from "@/pages/people/researchers.tsx";
-import PeopleAlumni from "@/pages/people/alumni.tsx";
 // Research and subpages
 import Research from "@/pages/research/index";
 import ResearchFacilities from "@/pages/research/facilities";
@@ -39,10 +35,6 @@ function Router() {
       <Route path="/about/history" component={AboutHistory} />
       <Route path="/about/opportunities" component={AboutOpportunities} />
       <Route path="/chief-scientist" component={ChiefScientist} />
-      <Route path="/people" component={People} />
-      <Route path="/people/interns" component={PeopleInterns} />
-      <Route path="/people/researchers" component={PeopleResearchers} />
-      <Route path="/people/alumni" component={PeopleAlumni} />
       <Route path="/research" component={Research} />
       {/* <Route path="/research/streams" component={ResearchStreams} /> */}
       <Route path="/research/facilities" component={ResearchFacilities} />
